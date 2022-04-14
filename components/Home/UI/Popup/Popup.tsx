@@ -28,7 +28,7 @@ const Popup = ({isOpen, handleClose, children, title, big = false}: PopupProps) 
 
   const handleBackgroundClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement
-    if(target.classList.contains(Background.styledComponentId))
+    if(target.classList.contains(Background.styledComponentId!))
       handleClose()
   }
 
@@ -65,7 +65,7 @@ const Popup = ({isOpen, handleClose, children, title, big = false}: PopupProps) 
                 </Background>
             </Fullscreen>
         }
-      </AnimatePresence>, document.getElementsByClassName(Wrapper.styledComponentId)[0]!)
+      </AnimatePresence>, document.getElementsByClassName(Wrapper.styledComponentId!)[0]!)
   );
 };
 

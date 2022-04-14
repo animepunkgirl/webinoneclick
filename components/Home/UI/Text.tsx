@@ -53,9 +53,9 @@ const P = styled.p<TypographyProps>`
   ${CommonSettings}
 `
 
+// ${p => p.$strong && css`font-weight: 600;`}
 const A = styled.a<TypographyProps>`
   cursor: pointer;
-  ${p => p.$strong && css`font-weight: 600;`}
   ${CommonSettings}
 `
 
@@ -89,7 +89,7 @@ const Text: VFC<TextProps> = (props) => {
     return <H2 {...correctProps}>{children}</H2>
 
   if(type === "a")
-    return <A {...correctProps} href={props.href} target="_blank" rel="noreferrer noopener" $strong={props.strong}>{children}</A>
+    return <A {...correctProps} href={props.href} target="_blank" rel="noreferrer noopener">{children}</A>
 
   if(type === "strong")
     return <Strong {...correctProps}>{children}</Strong>

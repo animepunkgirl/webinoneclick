@@ -48,11 +48,14 @@ const TypingSubtitle: VFC = () => {
     const max = 50
     const delay = Math.random() * (max - min + 1) + min
 
-    if(current.length !== final.length) {
+    if(!final)
+      return
+
+    if(current?.length !== final.length) {
       setTimeout(() => {
         const copy = [...texts]
 
-        const nextSymbol = final[current.length]
+        const nextSymbol = final[current?.length ?? 0]
         copy[currentText] += nextSymbol
         setTexts(copy)
       }, delay)

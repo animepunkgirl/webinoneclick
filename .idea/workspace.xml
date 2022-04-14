@@ -75,7 +75,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="21DhF7QG969McsoFWXuhzPfKZkF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -106,7 +106,7 @@
       <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\store\PetSlider\atoms" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.lint">
+  <component name="RunManager" selected="npm.animepunkgirl">
     <configuration name="animepunkgirl" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -200,7 +200,7 @@
       <workItem from="1649845732705" duration="4000" />
       <workItem from="1649846060149" duration="7791000" />
       <workItem from="1649867014365" duration="16000" />
-      <workItem from="1649912904200" duration="3509000" />
+      <workItem from="1649912904200" duration="3925000" />
     </task>
     <servers />
   </component>
