@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55bf1df5-4d48-4058-a737-76d6810970e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/initial/Info/ContactMePopup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/initial/Menu/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/animepunkgirl-rebuild.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/animepunkgirl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/E-commerce/MainSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/E-commerce/MainSlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Home/ContactMePopup.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Home/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/initial/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Home/HeaderMenu.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Home/Portfolio/Portfolio.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Home/Portfolio/PortfolioItems.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Home/Portfolio/PortfolioPopup.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useDynamicAdaptive.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useDynamicAdaptive.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useMatchMedia.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useMatchMedia.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pets/pet-slider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pets/pet-slider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/destyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Destyle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/global.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/home/header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/home/home.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/home/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/home/portfolio-popup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/home/variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/pet-slider/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/pet-slider/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/PortfolioItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/PortfolioItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/e-commerce/ECommerceItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/e-commerce/ECommerceItem.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="SCSS File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="21DhF7QG969McsoFWXuhzPfKZkF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jsx.switch.disabled" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="ts.external.directory.path" value="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\pages" />
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\components\Home\PortfolioFileSystem" />
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\components\Home\Header" />
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\store\Home" />
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\store\PetSlider\atoms" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.animepunkgirl">
+    <configuration name="animepunkgirl" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55bf1df5-4d48-4058-a737-76d6810970e6" name="Default Changelist" comment="" />
+      <created>1637481458779</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637481458779</updated>
+      <workItem from="1637481459957" duration="927000" />
+      <workItem from="1637482573363" duration="18000" />
+      <workItem from="1637483294224" duration="46184000" />
+      <workItem from="1637612596756" duration="5000" />
+      <workItem from="1637614283725" duration="14098000" />
+      <workItem from="1637629416155" duration="4153000" />
+      <workItem from="1637633650083" duration="6866000" />
+      <workItem from="1637650601369" duration="11812000" />
+      <workItem from="1637667415899" duration="5645000" />
+      <workItem from="1637734458050" duration="27000" />
+      <workItem from="1637753433450" duration="16899000" />
+      <workItem from="1637853848925" duration="18142000" />
+      <workItem from="1637934529181" duration="4715000" />
+      <workItem from="1637997078628" duration="123000" />
+      <workItem from="1637997211694" duration="4000" />
+      <workItem from="1638128327348" duration="10822000" />
+      <workItem from="1638139483553" duration="111000" />
+      <workItem from="1638435516812" duration="6685000" />
+      <workItem from="1638634459706" duration="6753000" />
+      <workItem from="1638647894587" duration="1265000" />
+      <workItem from="1643911994240" duration="4193000" />
+      <workItem from="1644064374369" duration="11500000" />
+      <workItem from="1644176147639" duration="6145000" />
+      <workItem from="1644326357505" duration="1156000" />
+      <workItem from="1644406498425" duration="9407000" />
+      <workItem from="1644674726366" duration="3686000" />
+      <workItem from="1645013615842" duration="4000" />
+      <workItem from="1648922456161" duration="19523000" />
+      <workItem from="1649008970386" duration="21012000" />
+      <workItem from="1649096959697" duration="71000" />
+      <workItem from="1649105756556" duration="13712000" />
+      <workItem from="1649171374602" duration="54000" />
+      <workItem from="1649196835407" duration="6343000" />
+      <workItem from="1649277418545" duration="33000" />
+      <workItem from="1649287266953" duration="10562000" />
+      <workItem from="1649314740315" duration="1726000" />
+      <workItem from="1649328233906" duration="1464000" />
+      <workItem from="1649384671088" duration="3554000" />
+      <workItem from="1649464681242" duration="522000" />
+      <workItem from="1649465243423" duration="33431000" />
+      <workItem from="1649591636092" duration="6389000" />
+      <workItem from="1649689679038" duration="13019000" />
+      <workItem from="1649747685138" duration="5160000" />
+      <workItem from="1649837711500" duration="2000" />
+      <workItem from="1649845184104" duration="539000" />
+      <workItem from="1649845732705" duration="4000" />
+      <workItem from="1649846060149" duration="7791000" />
+      <workItem from="1649867014365" duration="16000" />
+      <workItem from="1649912904200" duration="2713000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

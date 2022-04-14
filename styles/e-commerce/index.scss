@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Lato:wght@400;700&display=swap');
+
+.e-commerce {
+  @import "variables";
+  @import "../mixins";
+  background-color: #ffffff;
+  font-family: 'Lato', sans-serif;
+
+
+  [class*="__container"] {
+    max-width: $maxWidthContainer + 20px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $pink;
+    color: $white;
+    font-size: 17px;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: prc(20,17);
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: #ff0274;
+      cursor: pointer;
+    }
+  }
+
+  .title {
+    font-family: Josefin Sans;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 49px;
+    color: #1A0B5B;
+    text-align: center;
+  }
+
+  ._flyImage {
+    opacity: 1;
+    position: fixed;
+    z-index: 200;
+    transition: all 1s ease;
+  }
+
+  @import "e-commerce";
+}
