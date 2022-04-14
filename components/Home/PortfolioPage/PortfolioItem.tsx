@@ -44,7 +44,7 @@ const PortfolioItem = () => {
 
         <Features>
           {features.map((feature) =>
-            <Text><Markdown options={options}>{feature}</Markdown></Text>
+            <Text key={feature}><Markdown options={options}>{feature}</Markdown></Text>
           )}
         </Features>
 
@@ -54,7 +54,7 @@ const PortfolioItem = () => {
         </TextWithIcon>
       </ItemWrapper>
       <ImageLinkWrapper data-onHoverText="Visit the website" href={url} target="_blank" rel="noreferrer noopener">
-          <Image src={image} layout="fill" />
+          <Image src={image} layout="fill" alt={`Screenshot of ${title} project`}/>
       </ImageLinkWrapper>
     </PortfolioWrapper>
   );

@@ -31,7 +31,7 @@ const ImageSlider = () => {
         swiper.slideTo(petSlide, matches ? petSliderTheme.animations.slideSpeed : petSliderTheme.animations.slideSpeedMobile)
       }
     }
-  }, [swiper, petSlide])
+  }, [swiper, petSlide, matches])
 
   const handleOnSwiper = (swiper: SwiperCore) => {
     setSwiper(swiper)
@@ -44,9 +44,9 @@ const ImageSlider = () => {
         resizeObserver
         slidesPerView={1}
       >
-        {Items.map(({image}) =>
-          <SwiperSlide>
-            <Item><Image src={image} layout="fill" priority /></Item>
+        {Items.map(({label, image}) =>
+          <SwiperSlide key={image}>
+            <Item><Image src={image} layout="fill" priority alt={`Picture of ${label}`} /></Item>
           </SwiperSlide>
         )}
       </Swiper>

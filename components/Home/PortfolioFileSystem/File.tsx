@@ -22,7 +22,7 @@ const File: VFC<Props> = ({name, handleClick}) => {
 
     const isOpenInPath = portfolio.directory.search(name) !== -1
     setIsOpen(isOpenInPath)
-  }, [portfolio.open, portfolio.directory])
+  }, [name, portfolio])
 
   return (
     <Field onClick={handleClick} isOpen={isOpen}>

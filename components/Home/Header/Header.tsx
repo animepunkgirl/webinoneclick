@@ -10,10 +10,9 @@ const Header: VFC = () => {
   const [dark, setDark] = useState(true)
   const [portfolio, setPortfolio] = useRecoilState(portfolioAtom)
   const [pageSlide] = useRecoilState(pageSlideAtom)
-  const isPages = Boolean(!portfolio.open)
 
   useEffect(() => {
-    const larger = pageSlide === 0 && isPages
+    const larger = pageSlide === 0 && Boolean(!portfolio.open)
     const dark = (pageSlide + 1) % 2 !== 0
     console.log(dark)
     setLarger(larger)
@@ -26,8 +25,8 @@ const Header: VFC = () => {
 
   return (
     <Wrapper larger={larger} dark={dark}>
-      <HeaderContainer justifyContent={isPages ? "space-between" : "flex-start"}>
-        {isPages
+      <HeaderContainer justifyContent={Boolean(!portfolio.open) ? "space-between" : "flex-start"}>
+        {Boolean(!portfolio.open)
           ?
           <>
             <Title>Web_in_One.click</Title>

@@ -34,7 +34,7 @@ const Popup = ({isOpen, handleClose, children, title, big = false}: PopupProps) 
 
   useEffect(() => {
     setModalOpenState(isOpen)
-  }, [isOpen])
+  }, [isOpen, setModalOpenState])
 
   if(!isBrowser)
     return null

@@ -25,7 +25,7 @@ const Folder: VFC<Props> = ({name, items}) => {
 
     const isOpenInPath = portfolio.directory.search(name) !== -1
     setIsOpen(isOpenInPath)
-  }, [portfolio.open, portfolio.directory])
+  }, [name, portfolio])
 
   return (
     <GapWrapper>

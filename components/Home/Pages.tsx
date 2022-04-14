@@ -14,7 +14,7 @@ const Pages: VFC = () => {
   useEffect(() => {
     if(swiper && !swiper.destroyed && pageSlide !== swiper.activeIndex)
       swiper.slideTo(pageSlide)
-  }, [pageSlide])
+  }, [swiper, pageSlide])
 
   const handleSlideChange = (swiper: SwiperCore) => {
     setPageSlide(swiper.activeIndex)

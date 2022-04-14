@@ -9,7 +9,9 @@ const Strong:FC = ({children}) => {
   return (<Text type="strong" color="purple">{children}</Text>)
 }
 
-export default {
+const TextHelpers = {
   a: Link,
   strong: Strong
 }
+
+export default TextHelpers;

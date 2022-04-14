@@ -113,12 +113,7 @@ const TypingSubtitle: VFC = () => {
               color="purple"
               {...textSettings}
           >
-              <Cursor
-                  children="|"
-                  ending={animeState === "ending" && true}
-                  typing={animeState === "typing" && true}
-                  {...textSettings}
-              />
+              <Cursor ending={animeState === "ending" && true} typing={animeState === "typing" && true}{...textSettings}>|</Cursor>
           </Text>
       }
     </TextWrapper>

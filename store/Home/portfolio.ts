@@ -13,7 +13,7 @@ const portfolioAtom = atom<PortfolioAtom>({
   key: "portfolioAtom",
   default: {
     open: 0,
-    item: portfolioItems[0],
+    item: portfolioItems[0]!,
     directory: ""
   }
 })
