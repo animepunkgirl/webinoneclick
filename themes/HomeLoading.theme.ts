@@ -13,7 +13,6 @@ export const homeLoadingTheme = () => {
     theme.colors[color] = "black"
   })
   theme.colors.darkBg = "white"
-  theme.colors.darkOrange = "white"
   theme.colors.lightBg = "white"
 
   return theme

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { Container } from "@Home/UI";
 
 export const HeadingContainer = styled(Container)`
@@ -11,23 +11,30 @@ export const Subtitle = styled.div`
   display: flex;
 `
 
-export const IconPosition = styled.div`
+interface IconPositionProps {
+  isBig: boolean
+}
+
+export const IconPosition = styled.div<IconPositionProps>`
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, 100%);
   animation: 
     color 2s infinite alternate, 
-    appearing 1s forwards ${p => p.theme.animations.pageLoading}ms,
-    moving 2s infinite alternate ${p => (p.theme.animations.pageLoading + 1000)}ms;
-  
-  width: 90px;
-  height: 90px;
-  @media (min-width: 500px) {
-    width: 100px;
-    height: 100px;
+    appearing 2s forwards,
+    moving 2s infinite alternate 2s;
+
+
+  ${({isBig}) => isBig
+    ? css`
+      width: 100px;
+      height: 100px;
+    ` : css`
+    width: 90px;
+    height: 90px;
+    `
   }
-  
   
   @keyframes color {
     0% {
@@ -40,7 +47,7 @@ export const IconPosition = styled.div`
   
   @keyframes appearing {
     0% {
-      transform: translate(-50%, 100%);
+      transform: translate(-50%, 500%);
     }
     100% {
       transform: translate(-50%, 0);

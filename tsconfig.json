@@ -4,6 +4,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@Home/*": ["components/Home/*"],
+      "@Portfolio/*": ["components/Portfolio/*"],
       "@PetSlider/*": ["components/PetSlider/*"],
       "@hooks/*": ["hooks/*"],
       "@themes/*": ["themes/*"],

@@ -8,10 +8,6 @@ const Wrapper = styled.div`
   
   background-color: ${p => p.theme.colors.lightBg};
   font-family: 'Consolas', monospace;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  min-height: 0;
 
   .ReactCollapse--collapse {
     transition: height 500ms;

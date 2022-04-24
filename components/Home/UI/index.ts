@@ -4,6 +4,9 @@ import Divider from "./Divider"
 import Section from "./Section"
 import Text from "./Text"
 import Popup from "./Popup/Popup"
+import Header from "./Header/Header"
+import ButtonLink from "./ButtonLink"
+import Logo from "./Logo"
 
 export {
   Button,
@@ -11,5 +14,8 @@ export {
   Divider,
   Section,
   Text,
-  Popup
+  Popup,
+  Header,
+  ButtonLink,
+  Logo
 }

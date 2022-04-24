@@ -1,39 +1,28 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import type { NextPage } from 'next'
 import {ThemeProvider} from "styled-components";
-import { homeLoadingTheme } from "@themes/HomeLoading.theme"
 import { homeTheme } from "@themes/Home.theme";
-import Header from "@Home/Header/Header"
 import Wrapper from "@Home/Home.styles"
-import Loading from "@Home/Loading/Loading";
+import HomeHeader from "@Home/HomeHeader/HomeHeader";
+import useMatchMedia from "@hooks/useMatchMedia";
 import Home from "@Home/Home";
+import HomeMobile from "@Home/HomeMobile";
+import {useRecoilState} from "recoil";
+import {isWideAtom} from "@store/Home";
 
 const HomePage: NextPage = () => {
-  const [theme, setTheme] = useState(homeLoadingTheme())
-  const [isHeaderLoaded, setIsHeaderLoaded] = useState(false)
-  const [isComplete, setIsComplete] = useState(false)
+  const matches = useMatchMedia({ size: 40, mobileFirst: true }, { size: 32.5, mobileFirst: true })
+  const [isWide, setIsWide] = useRecoilState(isWideAtom)
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsHeaderLoaded(true)
-    }, homeTheme.animations.headerLoading)
-
-    setTimeout(() => {
-      setTheme(homeTheme)
-    }, homeTheme.animations.themeLoading)
-
-    setTimeout(() => {
-      setIsComplete(true)
-    }, homeTheme.animations.pageLoading)
-  }, [])
-
+    setIsWide(matches)
+  }, [matches])
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={homeTheme}>
           <Wrapper>
-            {isHeaderLoaded && <Header />}
-            {!isComplete && <Loading />}
-            {isComplete && <Home />}
+            <HomeHeader />
+            {matches ? <Home /> : <HomeMobile />}
           </Wrapper>
       </ThemeProvider>
   )

@@ -1,5 +1,7 @@
 import React from 'react';
 import { IconPosition } from "./Heading.styles";
+import {useRecoilValue} from "recoil";
+import {isWideAtom} from "@store/Home";
 
 const ScrollSvg = () => {
   return (
@@ -104,8 +106,9 @@ const ScrollSvg = () => {
 }
 
 const ScrollIcon = () => {
+  const isWide = useRecoilValue(isWideAtom)
   return (
-    <IconPosition>
+    <IconPosition isBig={isWide}>
       <ScrollSvg />
     </IconPosition>
   );

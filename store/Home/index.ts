@@ -1,8 +1,11 @@
-import portfolioAtom from "./portfolio";
 import pageSlideAtom from "./pageSlide"
-
+import isWideAtom from "./isWide"
+import menuItemsAtom, {MenuItem} from "./menuItems"
 
 export {
-  portfolioAtom,
-  pageSlideAtom
-}
+  pageSlideAtom,
+  isWideAtom,
+  menuItemsAtom
+};
+
+export type { MenuItem };

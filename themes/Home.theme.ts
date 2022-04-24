@@ -14,11 +14,6 @@ export const homeTheme = {
     purple: "#c792ea",
     green: "#c3e88d",
   },
-  animations: {
-    headerLoading: 1500,
-    themeLoading: 2500,
-    pageLoading: 3000
-  },
   fontSize: {
     sm: 1,
     md: 1.25,

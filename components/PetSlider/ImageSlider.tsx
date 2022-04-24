@@ -10,7 +10,7 @@ import Items from "./Items";
 import {petSliderTheme} from "@themes/PetSlider.theme";
 
 const ImageSlider = () => {
-  const matches = useMatchMedia(768, true);
+  const matches = useMatchMedia({ size: 48, mobileFirst: true } );
   const [swiper, setSwiper] = useState<SwiperCore | null>(null)
   const petSlide = useRecoilValue(petSlideAtom)
 

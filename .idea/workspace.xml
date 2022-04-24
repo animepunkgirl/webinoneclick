@@ -93,20 +93,20 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\pages" />
-      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\components\Home\PortfolioFileSystem" />
-      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\components\Home\Header" />
-      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\store\Home" />
-      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\store\PetSlider\atoms" />
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\components\Portfolio\Item" />
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\components\Portfolio" />
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\components\Portfolio\Header" />
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\components\Portfolio\Sidebar" />
+      <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\store\Portfolio" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.animepunkgirl">
     <configuration name="animepunkgirl" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -202,6 +202,18 @@
       <workItem from="1649867014365" duration="16000" />
       <workItem from="1649912904200" duration="4696000" />
       <workItem from="1649925699298" duration="67000" />
+      <workItem from="1649933156998" duration="869000" />
+      <workItem from="1650017960900" duration="313000" />
+      <workItem from="1650018443284" duration="5547000" />
+      <workItem from="1650286259626" duration="2000" />
+      <workItem from="1650290088809" duration="6173000" />
+      <workItem from="1650318358166" duration="951000" />
+      <workItem from="1650330805994" duration="346000" />
+      <workItem from="1650331317571" duration="375000" />
+      <workItem from="1650383037795" duration="4000" />
+      <workItem from="1650405326135" duration="2914000" />
+      <workItem from="1650456227033" duration="4000" />
+      <workItem from="1650833560506" duration="10327000" />
     </task>
     <servers />
   </component>
