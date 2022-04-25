@@ -4,8 +4,6 @@ import { Field, GapWrapper } from "./FileSystem.styles";
 import {MdFolder, MdFolderOpen} from "react-icons/md";
 import File from "./File";
 import {Collapse} from "react-collapse";
-import {useRecoilValue} from "recoil";
-import {portfolioAtom} from "@store/Portfolio";
 
 interface Props {
   name: string,
@@ -14,15 +12,9 @@ interface Props {
 
 const Folder: VFC<Props> = ({name, items}) => {
   const [isOpen, setIsOpen] = useState(false)
-  const portfolio = useRecoilValue(portfolioAtom)
   const toggleFolder = () => {
     setIsOpen(prev => !prev)
   }
-
-  useEffect(() => {
-    const isOpenInPath = portfolio.directory.search(name) !== -1
-    setIsOpen(isOpenInPath)
-  }, [name, portfolio])
 
   return (
     <GapWrapper>

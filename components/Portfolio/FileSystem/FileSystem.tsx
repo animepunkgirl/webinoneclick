@@ -7,51 +7,52 @@ import Folder from "./Folder";
 import {portfolioItems} from "@store/portfolioItems";
 import {FileItem, FolderItem} from "@Types/FileSystem";
 import PortfolioItem from "@Types/PortfolioItem";
-import {portfolioAtom, sidebarAutoCloseAtom, sidebarOpenAtom} from "@store/Portfolio";
+import { portfolioItemAtom, sidebarAutoCloseAtom, sidebarOpenAtom } from "@store/Portfolio";
 import {useRecoilState, useRecoilValue} from "recoil";
 
 const FileSystem: VFC = () => {
-  const [portfolio, setPortfolio] = useRecoilState(portfolioAtom)
-  const [sidebarOpen, setSidebarOpen] = useRecoilState(sidebarOpenAtom)
+  const [, setPortfolioItem] = useRecoilState(portfolioItemAtom)
+  const [, setSidebarOpen] = useRecoilState(sidebarOpenAtom)
   const sidebarAutoClose = useRecoilValue(sidebarAutoCloseAtom)
 
-  const handlePortfolioFileClick = (item: PortfolioItem, directory: string) => {
-    setPortfolio({
-      item,
-      directory
-    })
+  const handlePortfolioFileClick = (item: PortfolioItem) => {
+    setPortfolioItem(item)
     if(sidebarAutoClose)
       setSidebarOpen(false)
   }
 
-  const portfolioItemsToFileItems = (portfolioItems: PortfolioItem[], directory: string): FileItem[] => {
+  const portfolioItemsToFileItems = (portfolioItems: PortfolioItem[]): FileItem[] => {
+    if(!portfolioItems)
+      return []
+
     return portfolioItems.map(project => {
       const name = project.title.toLowerCase().replaceAll(' ', '-') + '.tsx'
       return {
         type: "file",
         name,
-        onClick: () => handlePortfolioFileClick(project, directory + '/' + name)
+        onClick: () => handlePortfolioFileClick(project)
       }
     }) as FileItem[]
   }
-  const getPetProjects = (directory: string): FileItem[] => {
-    return portfolioItemsToFileItems(portfolioItems.filter(item => item.isPetProject), directory)
+
+  const getPetProjects = (): FileItem[] => {
+    return portfolioItemsToFileItems(portfolioItems.filter(item => item.isPetProject))
   }
 
-  const getRealProjects = (directory: string): FileItem[] => {
-    return portfolioItemsToFileItems(portfolioItems.filter(item => !item.isPetProject), directory)
+  const getRealProjects = (): FileItem[] => {
+    return portfolioItemsToFileItems(portfolioItems.filter(item => !item.isPetProject))
   }
 
   const fileSystem: FolderItem[] = [
     {
       type: "folder",
       name: "pet-projects",
-      items: getPetProjects("pet-projects")
+      items: getPetProjects()
     },
     {
       type: "folder",
       name: "commercial-projects",
-      items: getRealProjects("commercial-projects")
+      items: getRealProjects()
     }
   ]
 

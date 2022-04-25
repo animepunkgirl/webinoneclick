@@ -5,7 +5,7 @@ import {MdCode, MdOutlineDescription, MdOutlineFeaturedPlayList} from "react-ico
 import Markdown from "markdown-to-jsx";
 import Image from "next/image";
 import {useRecoilValue} from "recoil";
-import {portfolioAtom} from "@store/Portfolio";
+import {portfolioItemAtom} from "@store/Portfolio";
 import TextHelpers from "./TextHelpers";
 import {sidebarOpenAtom} from "@store/Portfolio";
 import FileUnselected from "@Portfolio/Item/FileUnselected";
@@ -15,10 +15,10 @@ const options = {
 }
 
 const Item = () => {
-  const portfolio = useRecoilValue(portfolioAtom)
+  const portfolioItem = useRecoilValue(portfolioItemAtom)
   const sidebarOpen = useRecoilValue(sidebarOpenAtom)
 
-  if(!portfolio.item)
+  if(!portfolioItem)
     return <FileUnselected />
 
   const {
@@ -28,7 +28,7 @@ const Item = () => {
     features,
     image,
     title
-  } = portfolio.item
+  } = portfolioItem
 
   return (
     <ItemWrapper sidebarOpen={sidebarOpen}>

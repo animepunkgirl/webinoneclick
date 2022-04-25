@@ -1,8 +1,6 @@
-import React, {useEffect, useState, VFC} from 'react';
+import React, { useState, VFC } from 'react';
 import { MdFilePresent } from "react-icons/md";
 import { Field } from "./FileSystem.styles";
-import {useRecoilValue} from "recoil";
-import {portfolioAtom} from "@store/Portfolio";
 
 interface Props {
   name: string,
@@ -11,12 +9,6 @@ interface Props {
 
 const File: VFC<Props> = ({name, handleClick}) => {
   const [isOpen, setIsOpen] = useState(false)
-  const portfolio = useRecoilValue(portfolioAtom)
-
-  useEffect(() => {
-    const isOpenInPath = portfolio.directory.search(name) !== -1
-    setIsOpen(isOpenInPath)
-  }, [name, portfolio])
 
   return (
     <Field onClick={handleClick} isOpen={isOpen}>
