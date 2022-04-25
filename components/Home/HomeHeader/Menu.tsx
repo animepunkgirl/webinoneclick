@@ -42,9 +42,9 @@ const Menu: VFC = () => {
               </Link>
             </Item>
           )}
-          <NavLink href="/portfolio">
-            <Link>/portfolio</Link>
-          </NavLink>
+          <Link>
+            <NavLink href="/portfolio">/portfolio</NavLink>
+          </Link>
         </List>
       </Nav>
     </>

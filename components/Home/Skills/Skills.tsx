@@ -43,7 +43,7 @@ const Skills: VFC<Props> = () => {
               <Text type="strong" lineHeight={0.72} color="purple">Soft skills</Text>
               <Column>
                 <Item>
-                  Self-management, decision-making, but don't afraid to ask a question, self-motivation
+                  Self-management, decision-making, but don&apos;t afraid to ask a question, self-motivation
                 </Item>
               </Column>
               <Column>

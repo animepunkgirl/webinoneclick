@@ -7,7 +7,7 @@ import Link from "next/link"
 const PortfolioHeader = () => {
   return (
     <Header dark>
-      <Link href="/">
+      <Link href="/" passHref>
         <BackLink><MdNavigateBefore size="2rem" />Back</BackLink>
       </Link>
       {/*<Breadcrumb>@PortfolioStorage/{portfolio.directory}</Breadcrumb>*/}

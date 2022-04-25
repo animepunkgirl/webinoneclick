@@ -13,7 +13,7 @@ const Portfolio: VFC = () => {
   const matches = useMatchMedia({ size: 41.875 })
   useEffect(() => {
     setSidebarAutoClose(matches)
-  }, [matches])
+  }, [matches, setSidebarAutoClose])
 
   return (
     <IconContext.Provider value={{

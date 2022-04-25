@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const BackLink = styled.div`
+export const BackLink = styled.a`
   color: ${({theme}) => theme.colors.darkOrange};
   cursor: pointer;
   display: flex;

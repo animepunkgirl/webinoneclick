@@ -16,7 +16,7 @@ const HomePage: NextPage = () => {
 
   useEffect(() => {
     setIsWide(matches)
-  }, [matches])
+  }, [setIsWide, matches])
 
   return (
     <ThemeProvider theme={homeTheme}>
