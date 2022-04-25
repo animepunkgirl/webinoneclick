@@ -22,14 +22,14 @@ const FileSystem: VFC = () => {
   }
 
   const portfolioItemsToFileItems = (portfolioItems: PortfolioItem[]): FileItem[] => {
-    if(!portfolioItems)
+    if(!portfolioItems || !portfolioItems.length)
       return []
 
     return portfolioItems.map(project => {
       const name = project.title.toLowerCase().replaceAll(' ', '-') + '.tsx'
       return {
-        type: "file",
         name,
+        type: "file",
         onClick: () => handlePortfolioFileClick(project)
       }
     }) as FileItem[]

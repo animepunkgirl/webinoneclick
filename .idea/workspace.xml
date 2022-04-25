@@ -106,7 +106,7 @@
       <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\store\Portfolio" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.animepunkgirl">
+  <component name="RunManager" selected="npm.lint">
     <configuration name="animepunkgirl" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -139,8 +139,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.lint" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
