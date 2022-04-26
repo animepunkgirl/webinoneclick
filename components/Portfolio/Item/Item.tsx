@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {DescriptionWrapper, TextWithIcon, ItemWrapper, Features} from "./Item.styles";
 import {Text} from "@Home/UI";
 import {MdCode, MdOutlineDescription, MdOutlineFeaturedPlayList} from "react-icons/md";
@@ -9,6 +9,8 @@ import {portfolioItemAtom} from "@store/Portfolio";
 import TextHelpers from "./TextHelpers";
 import {sidebarOpenAtom} from "@store/Portfolio";
 import FileUnselected from "@Portfolio/Item/FileUnselected";
+import PortfolioItem from "@Types/PortfolioItem";
+import Loader from "@Portfolio/Item/Loader";
 
 const options = {
   overrides: TextHelpers,
@@ -17,9 +19,17 @@ const options = {
 const Item = () => {
   const portfolioItem = useRecoilValue(portfolioItemAtom)
   const sidebarOpen = useRecoilValue(sidebarOpenAtom)
+  const [currentItem, setCurrentItem] = useState<PortfolioItem | null>(null)
 
-  if(!portfolioItem)
+  useEffect(() => {
+    setTimeout(() => setCurrentItem(portfolioItem), 250)
+  }, [portfolioItem])
+
+  if(!currentItem)
     return <FileUnselected />
+
+  if(portfolioItem !== currentItem)
+    return <Loader />
 
   const {
     url,
@@ -28,7 +38,7 @@ const Item = () => {
     features,
     image,
     title
-  } = portfolioItem
+  } = currentItem
 
   return (
     <ItemWrapper sidebarOpen={sidebarOpen}>
@@ -55,9 +65,8 @@ const Item = () => {
           <MdCode />
           <Text>Made with: {madeWith}</Text>
         </TextWithIcon>
-
-        <Image image={image} title={title} url={url} />
       </DescriptionWrapper>
+      <Image image={image} title={title} url={url} />
     </ItemWrapper>
   );
 };

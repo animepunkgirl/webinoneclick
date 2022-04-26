@@ -23,13 +23,23 @@ export const ItemWrapper = styled.article<ItemWrapperProps>`
   align-items: flex-start;
 `
 
-export const FileUnselectedWrapper = styled.div`
+export const CenteringWrapper = styled.div`
   display: grid;
   place-items: center;
   height: 70vh;
   width: 100%;
 `
 
+export const AnimatedLoader = styled.div`
+  
+  animation: Rotate 0.8s infinite;
+  
+  @keyframes Rotate {
+    to {
+      transform: rotate(360deg)
+    }
+  }
+`
 export const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;

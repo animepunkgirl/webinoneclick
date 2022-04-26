@@ -55,8 +55,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="SCSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -106,7 +106,7 @@
       <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\store\Portfolio" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.animepunkgirl">
     <configuration name="animepunkgirl" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -215,7 +215,7 @@
       <workItem from="1650456227033" duration="4000" />
       <workItem from="1650833560506" duration="11026000" />
       <workItem from="1650905097218" duration="7000" />
-      <workItem from="1650928948416" duration="2444000" />
+      <workItem from="1650928948416" duration="3733000" />
     </task>
     <servers />
   </component>
