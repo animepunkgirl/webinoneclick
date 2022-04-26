@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {ImageLinkWrapper, DescriptionWrapper, TextWithIcon, ItemWrapper, Features} from "./Item.styles";
 import {Text} from "@Home/UI";
 import {MdCode, MdOutlineDescription, MdOutlineFeaturedPlayList} from "react-icons/md";
@@ -17,7 +17,7 @@ const options = {
 const Item = () => {
   const portfolioItem = useRecoilValue(portfolioItemAtom)
   const sidebarOpen = useRecoilValue(sidebarOpenAtom)
-
+  const [currentImage, setCurrentImage] = useState(null)
   if(!portfolioItem)
     return <FileUnselected />
 
@@ -57,7 +57,7 @@ const Item = () => {
         </TextWithIcon>
       </DescriptionWrapper>
       <ImageLinkWrapper data-onhovertext="Visit the website" href={url} target="_blank" rel="noreferrer noopener">
-          <Image src={image} layout="fill" alt={`Screenshot of ${title} project`} placeholder="blur" />
+        {image && <Image src={image} layout="fill" alt={`Screenshot of ${title} project`} placeholder="blur" />}
       </ImageLinkWrapper>
     </ItemWrapper>
   );
