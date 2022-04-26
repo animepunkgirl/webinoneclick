@@ -21,14 +21,19 @@ const FileSystem: VFC = () => {
       setSidebarOpen(false)
   }
 
+  const getName = (title: string) => {
+    if(!title)
+      return
+
+    return title.toLowerCase().replaceAll(' ', '-') + '.tsx'
+  }
   const portfolioItemsToFileItems = (portfolioItems: PortfolioItem[]): FileItem[] => {
     if(!portfolioItems || !portfolioItems.length)
       return []
 
     return portfolioItems.map(project => {
-      const name = project.title.toLowerCase().replaceAll(' ', '-') + '.tsx'
       return {
-        name,
+        name: getName(project.title),
         type: "file",
         onClick: () => handlePortfolioFileClick(project)
       }
