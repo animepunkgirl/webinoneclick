@@ -18,17 +18,12 @@ export const AnimatedLoader = styled.div`
   }
 `
 
-interface DescriptionWrapperProps {
-  isPlaceholder: boolean
-}
-
-export const DescriptionWrapper = styled.div<DescriptionWrapperProps>`
+export const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   flex: 1 0 60%;
-  opacity: ${p => p.isPlaceholder ? 0.2 : 1};
   transition: opacity 0.2s ease;
 `
 

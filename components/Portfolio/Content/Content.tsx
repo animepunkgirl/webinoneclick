@@ -5,20 +5,15 @@ import FileUnselected from "@Portfolio/Content/FileUnselected";
 import PortfolioItem from "@Types/PortfolioItem";
 import axios from "axios";
 import Item from "@Portfolio/Content/Item";
-import useLoader from "@hooks/useLoader";
 
 const Content: FC = () => {
   const itemId = useRecoilValue(currentItemAtom)
   const [portfolioItem, setPortfolioItem] = useState<PortfolioItem | null>(null)
   const [isPending, startTransition] = useTransition()
-  const loader = useLoader()
-
 
   const fetchItemInfo = async () => {
-    loader.start()
     const response = await axios.get<PortfolioItem>(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/portfolio/${itemId}`)
     setPortfolioItem(response.data)
-    loader.finish()
   }
 
   //Fetch file if needed
@@ -29,12 +24,12 @@ const Content: FC = () => {
     startTransition(() => {
       fetchItemInfo()
     })
-  }, [itemId, fetchItemInfo])
+  }, [itemId])
 
   if(typeof itemId !== "number" || !portfolioItem)
     return <FileUnselected />
 
-  return <Item item={portfolioItem} isPlaceholder={isPending} />
+  return <Item item={portfolioItem} isLoading={isPending} />
 };
 
 export default Content;
