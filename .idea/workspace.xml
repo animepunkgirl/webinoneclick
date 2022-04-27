@@ -106,7 +106,7 @@
       <recent name="C:\Users\Admin\WebStorm\animepunkgirl-rebuild\components\Portfolio\Header" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.animepunkgirl">
     <configuration name="animepunkgirl" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -217,7 +217,8 @@
       <workItem from="1650905097218" duration="7000" />
       <workItem from="1650928948416" duration="4058000" />
       <workItem from="1650961121467" duration="890000" />
-      <workItem from="1651015836023" duration="14709000" />
+      <workItem from="1651015836023" duration="15354000" />
+      <workItem from="1651034500937" duration="284000" />
     </task>
     <servers />
   </component>

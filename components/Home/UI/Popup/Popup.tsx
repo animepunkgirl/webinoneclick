@@ -45,27 +45,27 @@ const popupShow = { transformPerspective: 400, y: 0, rotateX: 0, scale: 1 }
       </AnimatePresence>, document.getElementsByClassName(Wrapper.styledComponentId!)[0]!)
  */
 const Popup = ({isOpen, handleClose, children, title, big = false}: PopupProps) => {
-  const [isBrowser, setIsBrowser] = useState(false)
-  const [, setModalOpenState] = useRecoilState(modalOpenState)
-
-  useEffect(() => {
-    setIsBrowser(true)
-  }, [])
-
-  const handleBackgroundClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLElement
-    if(target.classList.contains(Background.styledComponentId!))
-      handleClose()
-  }
-
-  useEffect(() => {
-    setModalOpenState(isOpen)
-  }, [isOpen, setModalOpenState])
-
-  if(!isBrowser)
-    return null
-
-  return null;
+  // const [isBrowser, setIsBrowser] = useState(false)
+  // const [, setModalOpenState] = useRecoilState(modalOpenState)
+  //
+  // useEffect(() => {
+  //   setIsBrowser(true)
+  // }, [])
+  //
+  // const handleBackgroundClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   const target = e.target as HTMLElement
+  //   if(target.classList.contains(Background.styledComponentId!))
+  //     handleClose()
+  // }
+  //
+  // useEffect(() => {
+  //   setModalOpenState(isOpen)
+  // }, [isOpen, setModalOpenState])
+  //
+  // if(!isBrowser)
+  //   return null
+  //
+  // return null;
 
   return (
       <></>
