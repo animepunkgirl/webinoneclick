@@ -1,9 +1,8 @@
-import React, {FC, useCallback, useEffect, useState, useTransition} from 'react';
+import React, {FC, useEffect, useState, useTransition} from 'react';
 import { useRecoilState } from "recoil";
 import {currentItemAtom} from "@store/Portfolio";
 import FileUnselected from "@Portfolio/Content/FileUnselected";
 import PortfolioItem from "@Types/PortfolioItem";
-import Loader from "@Portfolio/Content/Loader";
 import axios from "axios";
 import Item from "@Portfolio/Content/Item";
 import useLoader from "@hooks/useLoader";
@@ -19,26 +18,22 @@ const Content: FC = () => {
     setItemId(null)
   }, [setItemId])
 
-  const fetchItem = useCallback(() => {
-    startTransition(() => {
-      const fetchFile = async () => {
-        const response = await axios.get<PortfolioItem>(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/portfolio/${itemId}`)
-
-        setPortfolioItem(response.data)
-      }
-      fetchFile()
-    })
-  }, [itemId])
+  const fetchItemInfo = async () => {
+    loader.start()
+    const response = await axios.get<PortfolioItem>(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/portfolio/${itemId}`)
+    setPortfolioItem(response.data)
+    loader.finish()
+  }
 
   //Fetch file if needed
   useEffect(() => {
     if(typeof itemId !== "number" || portfolioItem?.id === itemId)
       return;
 
-    loader.start()
-    fetchItem()
-    loader.finish()
-  }, [itemId, portfolioItem?.id, fetchItem, loader])
+    startTransition(() => {
+      fetchItemInfo()
+    })
+  }, [itemId, portfolioItem?.id, fetchItemInfo])
 
   if(typeof itemId !== "number" || !portfolioItem)
     return <FileUnselected />
