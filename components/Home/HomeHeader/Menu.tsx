@@ -1,11 +1,11 @@
-import {useState, VFC} from "react"
+import {useState, FC} from "react"
 import { Burger, Nav, List, Item, Link } from "./Menu.styles";
 import {useRecoilState, useRecoilValue} from "recoil";
 import {isWideAtom, pageSlideAtom} from "@store/Home";
 import useMenu from "@hooks/useMenu";
 import NavLink from "next/link";
 
-const Menu: VFC = () => {
+const Menu: FC = () => {
   const [activeBurger, setActiveBurger] = useState(false)
   const [pageSlide, setPageSlide] = useRecoilState(pageSlideAtom)
   const isWide = useRecoilValue(isWideAtom)

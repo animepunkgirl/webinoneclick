@@ -1,9 +1,8 @@
 
 export interface FileItem {
+  id: number,
   type: "file",
   name: string,
-  onClick: () => void,
-  directory: string
 }
 
 export interface FolderItem {

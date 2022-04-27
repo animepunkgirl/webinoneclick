@@ -1,7 +1,7 @@
-import {ReactElement} from "react";
 import {StaticImageData} from "next/image";
 
 export default interface PortfolioItem {
+  id: number,
   image: StaticImageData,
   isPetProject: boolean,
   title: string,

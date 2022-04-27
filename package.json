@@ -8,27 +8,30 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion": "^6.2.8",
-    "markdown-to-jsx": "^7.1.7",
-    "next": "^12.1.4",
-    "react": "^18.0.0",
-    "react-collapse": "^5.1.1",
-    "react-dom": "^18.0.0",
-    "react-icons": "^4.3.1",
-    "react-intersection-observer": "^8.33.1",
-    "react-reverse-portal": "^2.1.0",
-    "recoil": "^0.7.0",
-    "styled-components": "^5.3.5",
-    "swiper": "^8.0.7"
+    "axios": "latest",
+    "framer-motion": "latest",
+    "markdown-to-jsx": "latest",
+    "next": "latest",
+    "nprogress": "^0.2.0",
+    "react": "latest",
+    "react-collapse": "latest",
+    "react-dom": "latest",
+    "react-icons": "latest",
+    "react-intersection-observer": "latest",
+    "react-reverse-portal": "latest",
+    "recoil": "latest",
+    "styled-components": "latest",
+    "swiper": "latest"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
-    "@types/react": "^17.0.43",
-    "@types/react-collapse": "^5.0.1",
-    "@types/react-dom": "^17.0.14",
-    "@types/styled-components": "^5.1.24",
-    "eslint": "^8.12.0",
-    "eslint-config-next": "^12.1.4",
-    "typescript": "^4.6.3"
+    "@types/node": "latest",
+    "@types/nprogress": "^0.2.0",
+    "@types/react": "latest",
+    "@types/react-collapse": "latest",
+    "@types/react-dom": "latest",
+    "@types/styled-components": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "typescript": "latest"
   }
 }

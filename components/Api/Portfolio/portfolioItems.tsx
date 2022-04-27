@@ -1,11 +1,13 @@
-import PortfolioItem from "../types/PortfolioItem";
+import PortfolioItem from "@Types/PortfolioItem";
 import React from "react";
-import FeelzImage from "../public/portfolio/feelz.png";
-import ECommerceImage from "../public/portfolio/pets-ecommerce.png";
-import PetSliderImage from "../public/portfolio/pet-slider.png";
+import FeelzImage from "@public/portfolio/feelz.png";
+import ECommerceImage from "@public/portfolio/pets-ecommerce.png";
+import PetSliderImage from "@public/portfolio/pet-slider.png";
+import HomeImage from "@public/portfolio/home.jpg";
 
 export const portfolioItems: PortfolioItem[] = [
   {
+    id: 0,
     image: FeelzImage,
     isPetProject: false,
     title: "FeelzApp",
@@ -20,6 +22,7 @@ export const portfolioItems: PortfolioItem[] = [
     madeWith: "MongoDB, Express, React, Node.js, AWS S3"
   },
   {
+    id: 1,
     image: ECommerceImage,
     isPetProject: true,
     title: "E-Commerce (not ready)",
@@ -33,6 +36,7 @@ export const portfolioItems: PortfolioItem[] = [
     madeWith: "React, Swiper, Styled Components"
   },
   {
+    id: 2,
     image: PetSliderImage,
     isPetProject: true,
     title: "Fullscreen Slider",
@@ -43,5 +47,18 @@ export const portfolioItems: PortfolioItem[] = [
       "**Fully responsive** slider that changes its appearance depending on the screen size"
     ],
     madeWith: "React, Swiper, Styled Components"
+  },
+  {
+    id: 3,
+    image: HomeImage,
+    url: "/#",
+    isPetProject: true,
+    title: "WebInOne.Click",
+    description: "Actually my portfolio website where you are right now",
+    features: [
+      "Responsive design",
+      "Using Swiper for full page slider at PC"
+    ],
+    madeWith: "React / Next.js, Swiper, Styled Components, Recoil"
   }
 ]

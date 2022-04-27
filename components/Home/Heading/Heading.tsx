@@ -1,4 +1,4 @@
-import React, {VFC} from 'react';
+import React, {FC} from 'react';
 import { HeadingContainer, Subtitle } from "./Heading.styles";
 import { Divider, Section, Text } from "@Home/UI";
 import TypingSubtitle from "./TypingSubtitle/TypingSubtitle";
@@ -9,7 +9,7 @@ interface Props {
   mobile?: boolean
 }
 
-const Heading: VFC<Props> = ({mobile = false}) => {
+const Heading: FC<Props> = ({mobile = false}) => {
   const { addSection } = useMenu()
 
   return (

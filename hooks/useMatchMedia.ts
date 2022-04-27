@@ -36,7 +36,6 @@ const useMatchMedia = (width?: MatchMediaParams, height?: MatchMediaParams) => {
   }
 
   useEffect(() => {
-    console.log(queryBuilder(width, height))
     let mediaQuery = matchMedia(queryBuilder(width, height))
 
     //ComponentDidMouth match

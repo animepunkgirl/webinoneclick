@@ -1,4 +1,4 @@
-import React, {useEffect, useState, VFC} from 'react';
+import React, { useState, FC } from 'react';
 import {FileItem, FolderItem} from "@Types/FileSystem";
 import { Field, GapWrapper } from "./FileSystem.styles";
 import {MdFolder, MdFolderOpen} from "react-icons/md";
@@ -10,7 +10,7 @@ interface Props {
   items: FileItem[] | FolderItem[]
 }
 
-const Folder: VFC<Props> = ({name, items}) => {
+const Folder: FC<Props> = ({name, items}) => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleFolder = () => {
     setIsOpen(prev => !prev)
@@ -23,7 +23,7 @@ const Folder: VFC<Props> = ({name, items}) => {
         <GapWrapper>
           {items.map(item => {
             if(item.type === "file")
-              return <File name={item.name} key={item.name} handleClick={item.onClick} />
+              return <File id={item.id} name={item.name} key={item.id} />
 
             return <Folder name={item.name} items={item.items} key={item.name} />
           })}

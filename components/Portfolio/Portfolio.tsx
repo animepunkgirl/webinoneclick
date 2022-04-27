@@ -1,15 +1,16 @@
-import React, {memo, useEffect, VFC} from 'react';
-import { ContainerWithSidebar } from "./Portfolio.styles"
+import React, {FC, memo, useEffect} from 'react';
+import { ContainerWithSidebar, ContentWrapper } from "./Portfolio.styles"
 import {homeTheme} from "@themes/Home.theme";
 import {IconContext} from "react-icons";
 import Sidebar from "@Portfolio/Sidebar/Sidebar";
-import Item from "@Portfolio/Item/Item";
-import {useRecoilState} from "recoil";
+import {useRecoilState, useRecoilValue} from "recoil";
 import useMatchMedia from "@hooks/useMatchMedia";
-import {sidebarAutoCloseAtom} from "@store/Portfolio";
+import {sidebarAutoCloseAtom, sidebarOpenAtom} from "@store/Portfolio";
+import Content from "@Portfolio/Content/Content";
 
-const Portfolio: VFC = () => {
-  const [sidebarAutoClose, setSidebarAutoClose] = useRecoilState(sidebarAutoCloseAtom)
+const Portfolio: FC = () => {
+  const sidebarOpen = useRecoilValue(sidebarOpenAtom)
+  const [, setSidebarAutoClose] = useRecoilState(sidebarAutoCloseAtom)
   const matches = useMatchMedia({ size: 41.875 })
   useEffect(() => {
     setSidebarAutoClose(matches)
@@ -21,8 +22,10 @@ const Portfolio: VFC = () => {
       size: "30px"
     }}>
       <ContainerWithSidebar>
-        <Sidebar />
-        <Item />
+        <Sidebar isOpen={sidebarOpen}/>
+        <ContentWrapper sidebarOpen={sidebarOpen}>
+          <Content />
+        </ContentWrapper>
       </ContainerWithSidebar>
     </IconContext.Provider>
   );

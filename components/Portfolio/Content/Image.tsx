@@ -1,5 +1,5 @@
-import React, {VFC} from 'react';
-import {ImageLinkWrapper} from "@Portfolio/Item/Item.styles";
+import React, {FC} from 'react';
+import {ImageLinkWrapper} from "@Portfolio/Content/Item.styles";
 import {StaticImageData} from "next/image";
 import NextImage from "next/image";
 
@@ -9,7 +9,7 @@ interface Props {
   image: StaticImageData
 }
 
-const Image: VFC<Props> = ({url, title, image}) => {
+const Image: FC<Props> = ({url, title, image}) => {
   return (
     <ImageLinkWrapper data-onhovertext="Visit the website" href={url} target="_blank" rel="noreferrer noopener">
       <NextImage

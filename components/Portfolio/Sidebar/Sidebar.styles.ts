@@ -1,5 +1,4 @@
-import styled, {css} from "styled-components";
-
+import styled from "styled-components";
 
 interface AsideProps {
   open: boolean
@@ -29,32 +28,4 @@ export const Content = styled.div`
     width: 320px;
   }
   padding: 0 10px;
-`
-
-export const Toggle = styled.div<AsideProps>`
-  position: fixed;
-  width: 2.7rem;
-  height: 2.7rem;
-  cursor: pointer;
-  top: 4.25rem;
-  display: grid;
-  place-items: center;
-  transition: transform 0.5s ease;
-  left: 0;
-  background: ${({theme}) => theme.colors.darkBg};
-  z-index: 20;
-
-  ${p => p.open ? css`
-    transform: translateX(calc(100vw - 100%));
-  ` : css`
-    transform: translateX(-20%);
-  `};
-  
-  @media (min-width: 768px) {
-    ${p => p.open ? css`
-    transform: translateX(calc(320px - 15%));
-  ` : css`
-    transform: translateX(-20%);
-  `};
-  }
 `

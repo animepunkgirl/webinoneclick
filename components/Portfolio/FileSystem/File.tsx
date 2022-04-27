@@ -1,17 +1,32 @@
-import React, { useState, VFC } from 'react';
+import React, { FC } from 'react';
 import { MdFilePresent } from "react-icons/md";
 import { Field } from "./FileSystem.styles";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {currentItemAtom, sidebarAutoCloseAtom, sidebarOpenAtom} from "@store/Portfolio";
 
 interface Props {
+  id: number,
   name: string,
-  handleClick: () => void,
 }
 
-const File: VFC<Props> = ({name, handleClick}) => {
-  const [isOpen, setIsOpen] = useState(false)
+const File: FC<Props> = ({id, name}) => {
+  const [currentItem, setCurrentItem] = useRecoilState(currentItemAtom)
+  const [, setSidebarOpen] = useRecoilState(sidebarOpenAtom)
+  const sidebarAutoClose = useRecoilValue(sidebarAutoCloseAtom)
+
+  const isOpen = currentItem === id;
+
+  const handleFileClick = () => {
+    setCurrentItem(id)
+    if(sidebarAutoClose)
+      setSidebarOpen(false)
+  }
 
   return (
-    <Field onClick={handleClick} isOpen={isOpen}>
+    <Field
+      isOpen={isOpen}
+      onClick={() => handleFileClick()}
+    >
       <MdFilePresent size="27px" />
       <p>{name}</p>
     </Field>

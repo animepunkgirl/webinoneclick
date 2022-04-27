@@ -10,7 +10,8 @@
       "@themes/*": ["themes/*"],
       "@store/*": ["store/*"],
       "@helpers/*": ["helpers/*"],
-      "@Types/*": ["types/*"]
+      "@Types/*": ["types/*"],
+      "@public/*": ["public/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

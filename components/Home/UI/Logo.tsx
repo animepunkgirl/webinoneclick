@@ -1,4 +1,4 @@
-import React, {VFC} from 'react';
+import React, {FC} from 'react';
 import styled from "styled-components";
 import {Typography} from "@themes/Home.theme";
 import {prc} from "@helpers/mixins";
@@ -15,7 +15,7 @@ const StyledLogo = styled.h1`
     transition: font-size 0.3s ease;
 `
 
-const Logo: VFC = () => {
+const Logo: FC = () => {
   return (
     <StyledLogo>Web_in_One.click</StyledLogo>
   );

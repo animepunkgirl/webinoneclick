@@ -1,35 +1,23 @@
-import React, {useEffect, useState} from 'react';
-import {DescriptionWrapper, TextWithIcon, ItemWrapper, Features} from "./Item.styles";
+import React, { FC } from 'react';
+import {DescriptionWrapper, TextWithIcon, Features} from "./Item.styles";
 import {Text} from "@Home/UI";
 import {MdCode, MdOutlineDescription, MdOutlineFeaturedPlayList} from "react-icons/md";
 import Markdown from "markdown-to-jsx";
-import Image from "./Image";
-import {useRecoilValue} from "recoil";
-import {portfolioItemAtom} from "@store/Portfolio";
+import ImageContainer from "./Image";
 import TextHelpers from "./TextHelpers";
-import {sidebarOpenAtom} from "@store/Portfolio";
-import FileUnselected from "@Portfolio/Item/FileUnselected";
 import PortfolioItem from "@Types/PortfolioItem";
-import Loader from "@Portfolio/Item/Loader";
 
 const options = {
   overrides: TextHelpers,
 }
 
-const Item = () => {
-  const portfolioItem = useRecoilValue(portfolioItemAtom)
-  const sidebarOpen = useRecoilValue(sidebarOpenAtom)
-  const [currentItem, setCurrentItem] = useState<PortfolioItem | null>(null)
 
-  useEffect(() => {
-    setTimeout(() => setCurrentItem(portfolioItem), 250)
-  }, [portfolioItem])
+interface Props {
+  item: PortfolioItem,
+  isPlaceholder: boolean
+}
 
-  if(!currentItem)
-    return <FileUnselected />
-
-  if(portfolioItem !== currentItem)
-    return <Loader />
+const Item: FC<Props> = ({ item, isPlaceholder }) => {
 
   const {
     url,
@@ -38,11 +26,11 @@ const Item = () => {
     features,
     image,
     title
-  } = currentItem
+  } = item
 
   return (
-    <ItemWrapper sidebarOpen={sidebarOpen}>
-      <DescriptionWrapper>
+    <>
+      <DescriptionWrapper isPlaceholder={isPlaceholder}>
         <h1><Text type="a" adaptiveFont={[24, 20]} color="red" href={url}># {title} #</Text></h1>
 
         <TextWithIcon>
@@ -66,8 +54,8 @@ const Item = () => {
           <Text>Made with: {madeWith}</Text>
         </TextWithIcon>
       </DescriptionWrapper>
-      <Image image={image} title={title} url={url} />
-    </ItemWrapper>
+      <ImageContainer image={image} title={title} url={url} />
+    </>
   );
 };
 

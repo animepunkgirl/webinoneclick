@@ -1,4 +1,4 @@
-import React, {VFC} from 'react';
+import React, {FC} from 'react';
 import { Container, Divider, Section, Text } from "@Home/UI";
 import { Column, Flex, Row, Item } from "@Home/Skills/Skills.styles";
 import {useRecoilValue} from "recoil";
@@ -9,7 +9,7 @@ interface Props {
   mobile?: boolean
 }
 
-const Skills: VFC<Props> = () => {
+const Skills: FC<Props> = () => {
   const isWide = useRecoilValue(isWideAtom)
   const { addSection } = useMenu()
 
@@ -27,15 +27,13 @@ const Skills: VFC<Props> = () => {
               <Text type="strong" lineHeight={0.72} color="purple">Hard skills</Text>
               <Column>
                 <Item>
-                  <Text type="strong" size="sm">Confident</Text>:
-                  React/Next.js, Redux/RTK, TypeScript, JavaScript/ES6+, HTML5/CSS3, SCSS/Styled Components, Node.js,
-                  Adaptive & Responsive Design, MongoDB, Git
+                  <Text type="strong" size="sm">Confident</Text>: TypeScript / JavaScript (ES6+), React / Next.js, Redux / Redux Toolkit, HTML5 / CSS3, BEM / SCSS / Styled Components / CSS Modules, Adaptive and responsive design, Git, Node.js, MongoDB, Figma
                 </Item>
               </Column>
               <Column>
                 <Item>
                   <Text type="strong" size="sm">Trying to get better</Text>:
-                  Webpack, SOLID/Software design patterns, Tests, Recoil
+                  Webpack, SOLID / Software design patterns, Tests, Recoil
                 </Item>
               </Column>
             </Row>

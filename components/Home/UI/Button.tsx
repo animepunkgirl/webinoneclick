@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FC} from "react";
+import {FC, ReactNode} from "react";
 
 export const StyledButton = styled.button`
   font-size: 1.15rem;
@@ -19,6 +19,7 @@ export const StyledButton = styled.button`
 export interface Props {
   onClick?: () => void,
   isLink?: boolean,
+  children: ReactNode
 }
 
 const Button: FC<Props> = ({children, onClick}) => {

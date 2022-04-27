@@ -1,11 +1,11 @@
-import React, {VFC} from 'react';
+import React, {FC} from 'react';
 import { Text, Divider, Section, Container, ButtonLink, Button } from "@Home/UI";
 import { Title, Flex, Column, Buttons } from "./Footer.styles";
 import useMenu from "@hooks/useMenu";
 import {useRecoilValue} from "recoil";
 import {isWideAtom} from "@store/Home";
 
-const Footer: VFC = () => {
+const Footer: FC = () => {
   const { addSection } = useMenu()
   const isWide = useRecoilValue(isWideAtom)
 

@@ -1,8 +1,14 @@
 import {atom} from "recoil";
 import PortfolioItem from "@Types/PortfolioItem";
+import {PortfolioItemListDTO} from "@Types/PortfolioItemListDTO";
 
-const portfolioItemAtom = atom<PortfolioItem | null>({
-  key: "portfolioItemAtom",
+const itemListAtom = atom<PortfolioItemListDTO[]>({
+  key: "itemListAtom",
+  default: []
+})
+
+const currentItemAtom = atom<number | null>({
+  key: "currentItemAtom",
   default: null
 })
 
@@ -18,7 +24,8 @@ const sidebarAutoCloseAtom = atom({
 })
 
 export {
-  portfolioItemAtom,
+  itemListAtom,
+  currentItemAtom,
   sidebarOpenAtom,
   sidebarAutoCloseAtom
 }

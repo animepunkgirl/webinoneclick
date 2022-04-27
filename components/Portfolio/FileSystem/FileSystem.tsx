@@ -1,59 +1,49 @@
-import React, { VFC } from 'react';
+import React, { FC } from 'react';
 import {Storage, SystemWrapper} from "./FileSystem.styles"
 import {MdStorage} from "react-icons/md"
 import {IconContext} from "react-icons";
 import {homeTheme} from "@themes/Home.theme";
 import Folder from "./Folder";
-import {portfolioItems} from "@store/portfolioItems";
 import {FileItem, FolderItem} from "@Types/FileSystem";
-import PortfolioItem from "@Types/PortfolioItem";
-import { portfolioItemAtom, sidebarAutoCloseAtom, sidebarOpenAtom } from "@store/Portfolio";
-import {useRecoilState, useRecoilValue} from "recoil";
+import { itemListAtom } from "@store/Portfolio";
+import { useRecoilValue } from "recoil";
+import {PortfolioItemListDTO} from "@Types/PortfolioItemListDTO";
 
-const FileSystem: VFC = () => {
-  const [, setPortfolioItem] = useRecoilState(portfolioItemAtom)
-  const [, setSidebarOpen] = useRecoilState(sidebarOpenAtom)
-  const sidebarAutoClose = useRecoilValue(sidebarAutoCloseAtom)
+const ItemsToFiles = (items: PortfolioItemListDTO[]): FileItem[] => {
+  if(!items || !items.length)
+    return []
 
-  const handlePortfolioFileClick = (item: PortfolioItem) => {
-    setPortfolioItem(item)
-    if(sidebarAutoClose)
-      setSidebarOpen(false)
-  }
+  return items.map(item => {
+    return {
+      id: item.id,
+      name: getName(item.title),
+      type: "file"
+    }
+  })
+}
 
-  const getName = (title: string) => title.toLowerCase().replace(' /g', '-') + '.tsx'
+const getName = (title: string) => title.toLowerCase().split(' ').join('-') + '.tsx'
 
-  const portfolioItemsToFileItems = (portfolioItems: PortfolioItem[]): FileItem[] => {
-    if(!portfolioItems || !portfolioItems.length)
-      return []
+const getPetProjects = (items: PortfolioItemListDTO[]): FileItem[] => {
+  return ItemsToFiles(items.filter(item => item.isPetProject))
+}
 
-    return portfolioItems.map(project => {
-      return {
-        name: getName(project.title),
-        type: "file",
-        onClick: () => handlePortfolioFileClick(project)
-      }
-    }) as FileItem[]
-  }
+const getRealProjects = (items: PortfolioItemListDTO[]): FileItem[] => {
+  return ItemsToFiles(items.filter(item => !item.isPetProject))
+}
 
-  const getPetProjects = (): FileItem[] => {
-    return portfolioItemsToFileItems(portfolioItems.filter(item => item.isPetProject))
-  }
-
-  const getRealProjects = (): FileItem[] => {
-    return portfolioItemsToFileItems(portfolioItems.filter(item => !item.isPetProject))
-  }
-
+const FileSystem: FC = () => {
+  const itemList = useRecoilValue(itemListAtom)
   const fileSystem: FolderItem[] = [
     {
       type: "folder",
       name: "pet-projects",
-      items: getPetProjects()
+      items: getPetProjects(itemList)
     },
     {
       type: "folder",
       name: "commercial-projects",
-      items: getRealProjects()
+      items: getRealProjects(itemList)
     }
   ]
 

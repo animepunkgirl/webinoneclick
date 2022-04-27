@@ -1,4 +1,4 @@
-import React, {useEffect, useState, VFC} from 'react';
+import React, {useEffect, useState, FC} from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import Heading from "./Heading/Heading";
 import Footer from "./Footer/Footer";
@@ -7,7 +7,7 @@ import {pageSlideAtom} from "@store/Home";
 import SwiperCore, {Keyboard, Mousewheel} from "swiper";
 import Skills from "@Home/Skills/Skills";
 
-const Home: VFC = () => {
+const Home: FC = () => {
   const [swiper, setSwiper] = useState<SwiperCore>()
   const [pageSlide, setPageSlide] = useRecoilState(pageSlideAtom)
 

@@ -1,32 +1,9 @@
 import styled from "styled-components";
 
-interface ItemWrapperProps {
-  sidebarOpen: boolean
-}
-
 const RowViewport = "41.875em";
 
-export const ItemWrapper = styled.article<ItemWrapperProps>`
-  flex: 1 1 auto;
-  padding: 1rem 25px 5rem 25px;
-  margin-left: ${({sidebarOpen}) => sidebarOpen ? "320px" : 0};
-  transition: margin-left 0.5s ease;
-  display: flex;
-  gap: 3rem;
-  flex-direction: column-reverse;
-  @media (min-width: ${RowViewport}) {
-    padding-top: 3rem;
-    flex-direction: row;
-    gap: 13px;
-  }
-  
-  align-items: flex-start;
-`
-
 export const CenteringWrapper = styled.div`
-  display: grid;
-  place-items: center;
-  height: 70vh;
+  text-align: center;
   width: 100%;
 `
 
@@ -40,12 +17,19 @@ export const AnimatedLoader = styled.div`
     }
   }
 `
-export const DescriptionWrapper = styled.div`
+
+interface DescriptionWrapperProps {
+  isPlaceholder: boolean
+}
+
+export const DescriptionWrapper = styled.div<DescriptionWrapperProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   flex: 1 0 60%;
+  opacity: ${p => p.isPlaceholder ? 0.2 : 1};
+  transition: opacity 0.2s ease;
 `
 
 export const TextWithIcon = styled.div`

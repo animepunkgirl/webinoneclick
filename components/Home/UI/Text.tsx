@@ -1,6 +1,6 @@
 import {homeTheme, Typography} from "../../../themes/Home.theme";
 import styled, {css} from "styled-components";
-import React, {FC, VFC} from "react";
+import React, {FC} from "react";
 import {adaptiveFont} from "../../../helpers/mixins";
 
 interface TypographyProps {
@@ -63,7 +63,7 @@ const Strong=styled.strong<TypographyProps>`
   ${CommonSettings}
 `
 
-const Text: VFC<TextProps> = (props) => {
+const Text: FC<TextProps> = (props) => {
   const {type = "p", children} = props
   const correctProps: TypographyProps = {
     $color: props.color,

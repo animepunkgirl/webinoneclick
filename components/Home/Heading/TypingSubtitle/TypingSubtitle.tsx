@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState, VFC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import { TextWrapper, Cursor } from './TypingSubtitle.styles'
 import { Text } from '@Home/UI'
 import { TextProps } from "@Home/UI/Text";
@@ -20,7 +20,7 @@ const textSettings: Partial<TextProps> = {
   lineHeight: 34/24
 }
 
-const TypingSubtitle: VFC = () => {
+const TypingSubtitle: FC = () => {
   const [animeState, setAnimeState] = useState<"initial" | "typing" | "ending" | "end">("initial")
   const [texts, setTexts] = useState(["", "", "", "", ""])
   const [currentText, setCurrentText] = useState(0)

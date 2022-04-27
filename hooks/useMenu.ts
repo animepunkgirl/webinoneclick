@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { isWideAtom, MenuItem, menuItemsAtom } from "@store/Home";
 
@@ -34,16 +34,11 @@ const useMenu = () => {
 
   const scrollToItem = (itemTitle: string) => {
     const item = getItem(itemTitle)
-    console.log(item)
     if(item)
       item.ref!.scrollIntoView({
         behavior: "smooth",
       })
   }
-
-  useEffect(() => {
-    console.log(menuItems)
-  }, [menuItems])
 
   return {
     addSection,
