@@ -97,7 +97,6 @@ export const Slide = styled.div<SlideProps>`
     
     & ${Title} {
       animation: Appearing ${({theme}) => theme.animations.textAppearance}ms ease 0.5s forwards;
-
       &:not(:last-child) {
         margin-bottom: 0.375em;
       }
@@ -143,7 +142,8 @@ export const Slide = styled.div<SlideProps>`
 export const Content = styled.div`
   max-width: 95%;
   margin: 0 auto;
-  @media(min-width: 1400px) {
+  overflow-wrap: anywhere;
+  @media(min-width: 1500px) {
     max-width: ${prc(510, 850)};
   }
 `

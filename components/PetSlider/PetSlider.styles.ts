@@ -15,10 +15,13 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   margin: 0 auto;
-  @media (min-width: 768px) {
-    top: 50%;
-    transform: translateY(-50%);
-  }
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media (min-width: 1500px) {
     max-width: 90vw;
   }
