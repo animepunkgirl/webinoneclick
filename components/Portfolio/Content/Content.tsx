@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState, useTransition} from 'react';
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import {currentItemAtom} from "@store/Portfolio";
 import FileUnselected from "@Portfolio/Content/FileUnselected";
 import PortfolioItem from "@Types/PortfolioItem";
@@ -8,15 +8,11 @@ import Item from "@Portfolio/Content/Item";
 import useLoader from "@hooks/useLoader";
 
 const Content: FC = () => {
-  const [itemId, setItemId] = useRecoilState(currentItemAtom)
+  const itemId = useRecoilValue(currentItemAtom)
   const [portfolioItem, setPortfolioItem] = useState<PortfolioItem | null>(null)
   const [isPending, startTransition] = useTransition()
   const loader = useLoader()
 
-  //Unselect file on page opening
-  useEffect(() => {
-    setItemId(null)
-  }, [setItemId])
 
   const fetchItemInfo = async () => {
     loader.start()
@@ -27,13 +23,13 @@ const Content: FC = () => {
 
   //Fetch file if needed
   useEffect(() => {
-    if(typeof itemId !== "number" || portfolioItem?.id === itemId)
+    if(typeof itemId !== "number")
       return;
 
     startTransition(() => {
       fetchItemInfo()
     })
-  }, [itemId, portfolioItem?.id, fetchItemInfo])
+  }, [itemId, fetchItemInfo])
 
   if(typeof itemId !== "number" || !portfolioItem)
     return <FileUnselected />
