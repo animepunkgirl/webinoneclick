@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import {BreakpointProps} from "@Types/Pet-Slider";
 
 export const ThemeSettings = styled.div`
   font-family: 'Roboto', sans-serif;
@@ -11,19 +12,27 @@ export const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  display: grid;
+  place-items: center;
 `
 
-export const Container = styled.div`
+export const Container = styled.div<BreakpointProps>`
   margin: 0 auto;
   min-height: 0;
   min-width: 0;
-  height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (min-width: 1500px) {
-    max-width: 90vw;
-  }
   position: relative;
+
+  height: 100vh;
+
+  ${({isTablet}) => isTablet && css`
+      max-width: 100vw;
+      width: 100%;
+      height: 100%;
+    `}
+
+  ${({isDesktop}) => isDesktop && css`
+      max-width: 90vw;
+      max-height: 90vh;
+  `}
 `

@@ -1,12 +1,12 @@
 import styled, {css} from "styled-components";
 import {adaptiveFont, prc} from "@helpers/mixins";
+import {BreakpointProps} from "@Types/Pet-Slider";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<BreakpointProps>`
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   width: 100%;
-  min-height: 100vh;
-  height: 1px;
+  height: 100vh;  
   overflow-y: auto;
   overflow-x: hidden;
   top: 0;
@@ -14,19 +14,16 @@ export const Wrapper = styled.div`
   z-index: 2;
   display: flex;
   flex-direction: column;
-
-  @media (min-width: 768px) {
+  
+  ${({isTablet}) => isTablet && css`
     background: none;
     flex-direction: row;
     min-height: auto;
     height: 100%;
     overflow: hidden;
-  }
+  `}
 `
 
-interface SlideProps {
-  active?: boolean
-}
 
 export const Label = styled.div`
   font-weight: 700;
@@ -56,6 +53,11 @@ export const Text = styled.div`
   height: 0;
   opacity: 0;
 `
+
+
+interface SlideProps extends BreakpointProps {
+  active?: boolean
+}
 export const Slide = styled.div<SlideProps>`
   background: rgba(0, 0, 0, 0.1);
   display: flex;
@@ -66,15 +68,11 @@ export const Slide = styled.div<SlideProps>`
   cursor: pointer;
   flex: 0 0 25%;
   transition: flex ${({theme}) => theme.animations.slideSpeedMobile}ms ease;
-  
-  @media(min-width: 768px) {
-      flex: 0 0 ${p => prc(425, p.theme.maxWidthContainer)};
-      transition: flex ${({theme}) => theme.animations.slideSpeed}ms ease;
-      ${p => p.active && css`
-        background: rgba(0, 0, 0, 0.4);
-        flex: 0 0 ${p => prc(850, p.theme.maxWidthContainer)};
-      `}
-  }
+
+  ${({isTablet}) => isTablet && css`
+    flex: 0 0 ${p => prc(425, p.theme.maxWidthContainer)};
+    transition: flex ${({theme}) => theme.animations.slideSpeed}ms ease;
+  `}
   
   ${p => p.active && css`
     flex: 0 0 50%;
@@ -139,11 +137,12 @@ export const Slide = styled.div<SlideProps>`
   }
 `
 
-export const Content = styled.div`
+export const Content = styled.div<BreakpointProps>`
   max-width: 95%;
   margin: 0 auto;
   overflow-wrap: anywhere;
-  @media(min-width: 1500px) {
+
+  ${({isDesktop}) => isDesktop && css`
     max-width: ${prc(510, 850)};
-  }
+  `}
 `

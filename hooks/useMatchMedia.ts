@@ -9,6 +9,9 @@ interface MatchMediaParams {
 }
 
 const littleQueryBuilder = (params: MatchMediaParams, isWidth: boolean = false) => {
+  if(typeof params.mobileFirst === "undefined")
+    params.mobileFirst = true
+
   const minmax = params.mobileFirst ? "min" : "max"
   const direction = isWidth ? "width" : "height"
   const units = params.units ?? "em";

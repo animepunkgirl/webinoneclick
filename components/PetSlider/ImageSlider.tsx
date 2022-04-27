@@ -2,43 +2,44 @@ import React, {useEffect, useState} from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import Image from "next/image";
 import SwiperCore from "swiper";
-import useMatchMedia from "@hooks/useMatchMedia";
 import { useRecoilValue } from "recoil";
-import { petSlideAtom } from "@store/PetSlider";
+import {isDesktopAtom, isTabletAtom, petSlideAtom} from "@store/PetSlider";
 import { Wrapper, Item } from "./ImageSlider.styles";
 import Items from "./Items";
 import {petSliderTheme} from "@themes/PetSlider.theme";
 
 const ImageSlider = () => {
-  const matches = useMatchMedia({ size: 48, mobileFirst: true } );
+  const isTablet = useRecoilValue(isTabletAtom)
+  const isDesktop = useRecoilValue(isDesktopAtom)
+
   const [swiper, setSwiper] = useState<SwiperCore | null>(null)
   const petSlide = useRecoilValue(petSlideAtom)
 
   useEffect(() => {
     if(swiper && !swiper.destroyed) {
-      if(matches) {
+      if(isTablet) {
         swiper.changeDirection('horizontal', true);
       } else {
         swiper.changeDirection('vertical', true);
-        swiper.updateAutoHeight(800);
+        // swiper.updateAutoHeight(800);
       }
     }
-  }, [swiper, matches])
+  }, [swiper, isTablet])
 
   useEffect(() => {
     if(swiper) {
       if(petSlide !== swiper.activeIndex) {
-        swiper.slideTo(petSlide, matches ? petSliderTheme.animations.slideSpeed : petSliderTheme.animations.slideSpeedMobile)
+        swiper.slideTo(petSlide, petSliderTheme.animations.slideSpeed)
       }
     }
-  }, [swiper, petSlide, matches])
+  }, [swiper, petSlide, isTablet])
 
   const handleOnSwiper = (swiper: SwiperCore) => {
     setSwiper(swiper)
   }
 
   return (
-    <Wrapper>
+    <Wrapper isTablet={isTablet} isDesktop={isDesktop}>
       <Swiper
         onAfterInit={handleOnSwiper}
         resizeObserver
@@ -46,7 +47,15 @@ const ImageSlider = () => {
       >
         {Items.map(({label, image}) =>
           <SwiperSlide key={image}>
-            <Item><Image src={image} layout="fill" priority alt={`Picture of ${label}`} /></Item>
+            <Item isTablet={isTablet}>
+              <Image
+                src={image}
+                layout="fill"
+                priority
+                alt={`Picture of ${label}`}
+                objectFit={"cover"}
+              />
+            </Item>
           </SwiperSlide>
         )}
       </Swiper>
