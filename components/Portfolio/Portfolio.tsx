@@ -11,10 +11,10 @@ import Content from "@Portfolio/Content/Content";
 const Portfolio: FC = () => {
   const sidebarOpen = useRecoilValue(sidebarOpenAtom)
   const [, setSidebarAutoClose] = useRecoilState(sidebarAutoCloseAtom)
-  const matches = useMatchMedia({ size: 41.875 })
+  const isTablet = useMatchMedia({ size: 41.875 })
   useEffect(() => {
-    setSidebarAutoClose(matches)
-  }, [matches, setSidebarAutoClose])
+    setSidebarAutoClose(!isTablet)
+  }, [isTablet, setSidebarAutoClose])
 
   return (
     <IconContext.Provider value={{

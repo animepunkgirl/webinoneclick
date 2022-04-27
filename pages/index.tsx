@@ -11,7 +11,7 @@ import {useRecoilState} from "recoil";
 import {isWideAtom} from "@store/Home";
 
 const HomePage: NextPage = () => {
-  const matches = useMatchMedia({ size: 40, mobileFirst: true }, { size: 32.5, mobileFirst: true })
+  const matches = useMatchMedia({ size: 40 }, { size: 32.5 })
   const [isWide, setIsWide] = useRecoilState(isWideAtom)
 
   useEffect(() => {

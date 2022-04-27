@@ -14,14 +14,10 @@ export const Wrapper = styled.div<BreakpointProps>`
 
 export const Item = styled.div<BreakpointProps>`
   position: relative;
-  //margin-left: 50%;
-  //transform: translateX(-50%);
   height: 100vh;
   width: 100vw;
   ${({isTablet}) => isTablet && css`
-    margin-left: 0;
     height: 100%;
-    transforM: translateX(0);
     padding-top: ${p => prc(944, p.theme.maxWidthContainer)};
     width: unset;
   `}
