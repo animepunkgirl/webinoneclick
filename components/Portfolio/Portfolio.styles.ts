@@ -15,12 +15,13 @@ interface SidebarOpenProp {
 export const ContentWrapper = styled.article<SidebarOpenProp>`
   flex: 1 1 auto;
   padding: 1rem 25px 5rem 25px;
-  margin-left: ${({sidebarOpen}) => sidebarOpen ? "320px" : 0};
-  transition: margin-left 0.5s ease;
   display: flex;
   gap: 3rem;
   flex-direction: column-reverse;
+  
   @media (min-width: ${RowViewport}) {
+    margin-left: ${({sidebarOpen}) => sidebarOpen ? "320px" : 0};
+    transition: margin-left 0.5s ease;
     padding-top: 3rem;
     flex-direction: row;
     gap: 13px;

@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useEffect, useMemo, useState, useTransition} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {useRecoilState, useRecoilValue} from "recoil";
 import { ContentWrapper } from "../Portfolio.styles";
 import {currentItemAtom, sidebarOpenAtom} from "@store/Portfolio";
@@ -16,19 +16,18 @@ const Content: FC = () => {
 
   const loader = useLoader()
 
-  const fetchItemInfo = useCallback(async () => {
+  const fetchItemInfo = async (id: number) => {
     loader.start()
     const response = await axios.get<PortfolioItem>(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/portfolio/${itemId}`)
     setPortfolioItem(response.data)
     return loader.finish()
-  }, [itemId])
+  }
 
-  //Fetch file if needed
   useEffect(() => {
     if(typeof itemId !== "number")
       return;
 
-    fetchItemInfo()
+    fetchItemInfo(itemId)
 
     return () => {
       setItemId(null)

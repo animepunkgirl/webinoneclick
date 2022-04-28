@@ -12,7 +12,7 @@ import {isWideAtom} from "@store/Home";
 
 const HomePage: NextPage = () => {
   const matches = useMatchMedia({ size: 40 }, { size: 32.5 })
-  const [isWide, setIsWide] = useRecoilState(isWideAtom)
+  const [, setIsWide] = useRecoilState(isWideAtom)
 
   useEffect(() => {
     setIsWide(matches)
@@ -20,7 +20,7 @@ const HomePage: NextPage = () => {
 
   return (
     <ThemeProvider theme={homeTheme}>
-          <Wrapper>
+          <Wrapper isSlider={matches}>
             <HomeHeader />
             {matches ? <Home /> : <HomeMobile />}
           </Wrapper>
