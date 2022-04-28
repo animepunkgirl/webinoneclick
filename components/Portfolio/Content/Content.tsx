@@ -1,35 +1,46 @@
-import React, {FC, useEffect, useState, useTransition} from 'react';
-import { useRecoilValue } from "recoil";
-import {currentItemAtom} from "@store/Portfolio";
+import React, {FC, useCallback, useEffect, useMemo, useState, useTransition} from 'react';
+import {useRecoilState, useRecoilValue} from "recoil";
+import { ContentWrapper } from "../Portfolio.styles";
+import {currentItemAtom, sidebarOpenAtom} from "@store/Portfolio";
 import FileUnselected from "@Portfolio/Content/FileUnselected";
 import PortfolioItem from "@Types/PortfolioItem";
 import axios from "axios";
 import Item from "@Portfolio/Content/Item";
 
-const Content: FC = () => {
-  const itemId = useRecoilValue(currentItemAtom)
-  const [portfolioItem, setPortfolioItem] = useState<PortfolioItem | null>(null)
-  const [isPending, startTransition] = useTransition()
+import useLoader from "@hooks/useLoader";
 
-  const fetchItemInfo = async () => {
+const Content: FC = () => {
+  const sidebarOpen = useRecoilValue(sidebarOpenAtom)
+  const [itemId, setItemId] = useRecoilState(currentItemAtom)
+  const [portfolioItem, setPortfolioItem] = useState<PortfolioItem | null>(null)
+
+  const loader = useLoader()
+
+  const fetchItemInfo = useCallback(async () => {
+    loader.start()
     const response = await axios.get<PortfolioItem>(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/portfolio/${itemId}`)
     setPortfolioItem(response.data)
-  }
+    return loader.finish()
+  }, [itemId])
 
   //Fetch file if needed
   useEffect(() => {
     if(typeof itemId !== "number")
       return;
 
-    startTransition(() => {
-      fetchItemInfo()
-    })
-  }, [itemId])
+    fetchItemInfo()
 
-  if(typeof itemId !== "number" || !portfolioItem)
-    return <FileUnselected />
+    return () => {
+      setItemId(null)
+    }
+  }, [itemId, fetchItemInfo, setItemId])
 
-  return <Item item={portfolioItem} isLoading={isPending} />
+
+  return (
+    <ContentWrapper sidebarOpen={sidebarOpen} style={{ opacity: loader.isLoading ? 0.2 : 1 }}>
+      {!portfolioItem ? <FileUnselected /> : <Item item={portfolioItem} />}
+    </ContentWrapper>
+  )
 };
 
 export default Content;

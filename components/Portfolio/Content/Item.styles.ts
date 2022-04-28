@@ -7,17 +7,6 @@ export const CenteringWrapper = styled.div`
   width: 100%;
 `
 
-export const AnimatedLoader = styled.div`
-  
-  animation: Rotate 0.8s infinite;
-  
-  @keyframes Rotate {
-    to {
-      transform: rotate(360deg)
-    }
-  }
-`
-
 export const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;

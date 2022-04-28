@@ -1,15 +1,21 @@
 import NProgress from "nprogress";
+import {useCallback, useState} from "react";
 
 const useLoader = () => {
-  const start = () => {
+  const [isLoading, setIsLoading] = useState(false)
+
+  const start = useCallback(() => {
+    setIsLoading(true)
     return NProgress.start()
-  }
-  const finish = () => {
-    return NProgress.done()
-  }
+  }, [NProgress.start, setIsLoading])
+
+  const finish = useCallback(() => {
+    NProgress.done()
+    return setIsLoading(false)
+  }, [NProgress.done, setIsLoading])
 
   return {
-    start, finish
+    start, finish, isLoading
   }
 }
 

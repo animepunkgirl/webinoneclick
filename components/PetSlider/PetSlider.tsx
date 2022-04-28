@@ -18,7 +18,7 @@ const PetSlider = () => {
     setIsDesktop(isTabletMatches)
 
     console.log(isTabletMatches, isDesktopMatches)
-  }, [isTabletMatches, isDesktopMatches])
+  }, [isTabletMatches, isDesktopMatches, setIsTablet, setIsDesktop])
 
   return (
     <ThemeSettings>

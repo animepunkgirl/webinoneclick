@@ -5,7 +5,10 @@ import Router from "next/router";
 import NProgressStyles from "../../../styles/NProgressStyles";
 
 const LoadingBar = () => {
-  NProgress.configure({ showSpinner: true });
+  NProgress.configure({
+    trickle: true,
+    trickleSpeed: 350
+  });
 
   Router.events.on("routeChangeStart", () => {
     console.log('onRouteChangeStart triggered');

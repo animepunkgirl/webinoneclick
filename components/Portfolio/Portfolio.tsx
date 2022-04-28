@@ -1,5 +1,5 @@
 import React, {FC, memo, useEffect} from 'react';
-import { ContainerWithSidebar, ContentWrapper } from "./Portfolio.styles"
+import { ContainerWithSidebar } from "./Portfolio.styles"
 import {homeTheme} from "@themes/Home.theme";
 import {IconContext} from "react-icons";
 import Sidebar from "@Portfolio/Sidebar/Sidebar";
@@ -9,7 +9,6 @@ import {sidebarAutoCloseAtom, sidebarOpenAtom} from "@store/Portfolio";
 import Content from "@Portfolio/Content/Content";
 
 const Portfolio: FC = () => {
-  const sidebarOpen = useRecoilValue(sidebarOpenAtom)
   const [, setSidebarAutoClose] = useRecoilState(sidebarAutoCloseAtom)
   const isTablet = useMatchMedia({ size: 41.875 })
   useEffect(() => {
@@ -22,10 +21,8 @@ const Portfolio: FC = () => {
       size: "30px"
     }}>
       <ContainerWithSidebar>
-        <Sidebar isOpen={sidebarOpen}/>
-        <ContentWrapper sidebarOpen={sidebarOpen}>
-          <Content />
-        </ContentWrapper>
+        <Sidebar />
+        <Content />
       </ContainerWithSidebar>
     </IconContext.Provider>
   );

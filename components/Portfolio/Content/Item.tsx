@@ -13,11 +13,10 @@ const options = {
 
 
 interface Props {
-  item: PortfolioItem,
-  isLoading: boolean
+  item: PortfolioItem
 }
 
-const Item: FC<Props> = ({ item, isLoading }) => {
+const Item: FC<Props> = ({ item }) => {
 
   const {
     url,
@@ -30,7 +29,7 @@ const Item: FC<Props> = ({ item, isLoading }) => {
 
   return (
     <>
-      <DescriptionWrapper style={{  opacity: isLoading ? 0.2 : 1  }}>
+      <DescriptionWrapper>
         <h1><Text type="a" adaptiveFont={[24, 20]} color="red" href={url}># {title} #</Text></h1>
 
         <TextWithIcon>
@@ -54,7 +53,7 @@ const Item: FC<Props> = ({ item, isLoading }) => {
           <Text>Made with: {madeWith}</Text>
         </TextWithIcon>
       </DescriptionWrapper>
-      <ImageContainer image={image} title={title} url={url} style={{  opacity: isLoading ? "0.2" : "1"  }} />
+      <ImageContainer image={image} title={title} url={url} />
     </>
   );
 };

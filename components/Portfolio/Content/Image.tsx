@@ -6,13 +6,12 @@ import NextImage from "next/image";
 interface Props {
   url: string,
   title: string,
-  image: StaticImageData,
-  style: CSSProperties
+  image: StaticImageData
 }
 
-const Image: FC<Props> = ({url, title, image, style}) => {
+const Image: FC<Props> = ({url, title, image}) => {
   return (
-    <ImageLinkWrapper data-onhovertext="Visit the website" href={url} target="_blank" rel="noreferrer noopener" style={style}>
+    <ImageLinkWrapper data-onhovertext="Visit the website" href={url} target="_blank" rel="noreferrer noopener">
       <NextImage
         src={image}
         layout="fill"
