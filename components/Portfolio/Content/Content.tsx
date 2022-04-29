@@ -9,34 +9,42 @@ import Item from "@Portfolio/Content/Item";
 
 import useLoader from "@hooks/useLoader";
 
+const fetchItemInfo = async (id: number) => {
+  const response = await axios.get<PortfolioItem>(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/portfolio/${id}`)
+  return response.data
+}
+
 const Content: FC = () => {
   const sidebarOpen = useRecoilValue(sidebarOpenAtom)
   const [itemId, setItemId] = useRecoilState(currentItemAtom)
   const [portfolioItem, setPortfolioItem] = useState<PortfolioItem | null>(null)
 
-  const loader = useLoader()
+  const [isLoading, loader] = useLoader()
 
-  const fetchItemInfo = async (id: number) => {
-    loader.start()
-    const response = await axios.get<PortfolioItem>(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/portfolio/${itemId}`)
-    setPortfolioItem(response.data)
-    return loader.finish()
-  }
 
   useEffect(() => {
     if(typeof itemId !== "number")
       return;
 
-    fetchItemInfo(itemId)
+    loader.start();
+
+    (async () => {
+      const item = await fetchItemInfo(itemId)
+      setPortfolioItem(item)
+    })()
+
+    loader.finish();
 
     return () => {
       setItemId(null)
     }
-  }, [itemId, fetchItemInfo, setItemId])
+
+    //eslint-disable-next-line
+  }, [itemId, setItemId])
 
 
   return (
-    <ContentWrapper sidebarOpen={sidebarOpen} style={{ opacity: loader.isLoading ? 0.2 : 1 }}>
+    <ContentWrapper sidebarOpen={sidebarOpen} style={{ opacity: isLoading ? 0.2 : 1 }}>
       {!portfolioItem ? <FileUnselected /> : <Item item={portfolioItem} />}
     </ContentWrapper>
   )

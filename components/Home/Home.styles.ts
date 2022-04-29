@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 
 interface Props {
-  isSlider: boolean
+  isSlider?: boolean
 }
 
 const Wrapper = styled.div<Props>`

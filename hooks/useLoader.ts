@@ -1,22 +1,30 @@
 import NProgress from "nprogress";
-import {useCallback, useState} from "react";
+import {useState} from "react";
 
-const useLoader = () => {
+interface Loader {
+  start: () => void,
+  finish: () => void
+}
+
+const useLoader = (): [boolean, Loader] => {
   const [isLoading, setIsLoading] = useState(false)
 
-  const start = useCallback(() => {
+  const start = () => {
     setIsLoading(true)
-    return NProgress.start()
-  }, [NProgress.start, setIsLoading])
-
-  const finish = useCallback(() => {
-    NProgress.done()
-    return setIsLoading(false)
-  }, [NProgress.done, setIsLoading])
-
-  return {
-    start, finish, isLoading
+    NProgress.start()
+    return
   }
+
+  const finish = () => {
+    setIsLoading(false)
+    NProgress.done()
+    return
+  }
+
+  return [isLoading, {
+    start,
+    finish
+  }]
 }
 
 export default useLoader
