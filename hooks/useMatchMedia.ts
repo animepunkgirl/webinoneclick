@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 type UnitsType = "em" | "px" | "rem" | "vw" | "vh" | "vmin" | "vmax"
 
@@ -8,7 +8,7 @@ interface MatchMediaParams {
   mobileFirst?: boolean
 }
 
-const littleQueryBuilder = (params: MatchMediaParams, isWidth: boolean = false) => {
+const oneQueryBuilder = (params: MatchMediaParams, isWidth: boolean = false) => {
   if(typeof params.mobileFirst === "undefined")
     params.mobileFirst = true
 
@@ -20,15 +20,15 @@ const littleQueryBuilder = (params: MatchMediaParams, isWidth: boolean = false) 
 
 const queryBuilder = (widthParams?: MatchMediaParams, heightParams?: MatchMediaParams) => {
   if(widthParams && heightParams) {
-    const widthQuery = littleQueryBuilder(widthParams, true)
-    const heightQuery = littleQueryBuilder(heightParams, false)
+    const widthQuery = oneQueryBuilder(widthParams, true)
+    const heightQuery = oneQueryBuilder(heightParams, false)
     return `${widthQuery} and ${heightQuery}`
   }
 
   if(widthParams)
-    return `${littleQueryBuilder(widthParams, true)}`
+    return `${oneQueryBuilder(widthParams, true)}`
 
-  return `${littleQueryBuilder(heightParams!, true)}`
+  return `${oneQueryBuilder(heightParams!, true)}`
 }
 
 const useMatchMedia = (width?: MatchMediaParams, height?: MatchMediaParams) => {

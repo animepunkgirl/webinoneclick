@@ -6,11 +6,6 @@ export const HeadingContainer = styled(Container)`
   justify-content: center;
 `
 
-export const Subtitle = styled.div`
-  text-align: center;
-  display: flex;
-`
-
 interface IconPositionProps {
   isBig: boolean
 }

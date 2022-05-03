@@ -53,7 +53,6 @@ const P = styled.p<TypographyProps>`
   ${CommonSettings}
 `
 
-// ${p => p.$strong && css`font-weight: 600;`}
 const A = styled.a<TypographyProps>`
   cursor: pointer;
   ${CommonSettings}
@@ -78,9 +77,7 @@ const Text: FC<TextProps> = (props) => {
     correctProps.$color = "white"
 
   if(type === "span")
-    return (
-      <Span {...correctProps}>{children}</Span>
-    )
+    return <Span {...correctProps}>{children}</Span>
 
   if(type === "h1")
     return <H1 {...correctProps}>{children}</H1>
@@ -94,7 +91,10 @@ const Text: FC<TextProps> = (props) => {
   if(type === "strong")
     return <Strong {...correctProps}>{children}</Strong>
 
-  return <P {...correctProps}>{children}</P>
+  if(type === "p")
+    return <P {...correctProps}>{children}</P>
+
+  return <Span {...correctProps}>{children}</Span>
 }
 
 export default Text;

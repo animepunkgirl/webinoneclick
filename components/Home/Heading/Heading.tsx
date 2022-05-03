@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
-import { HeadingContainer, Subtitle } from "./Heading.styles";
+import { HeadingContainer } from "./Heading.styles";
 import { Divider, Section, Text } from "@Home/UI";
-import TypingSubtitle from "./TypingSubtitle/TypingSubtitle";
 import ScrollIcon from "./ScrollIcon";
 import useMenu from "@hooks/useMenu";
+import Subtitle from "@Home/Heading/Subtitle/Subtitle";
 
 interface Props {
   mobile?: boolean
@@ -28,7 +28,7 @@ const Heading: FC<Props> = ({mobile = false}) => {
             Daniel_M.
           </Text>
           <Divider>Heading</Divider>
-          <Subtitle><TypingSubtitle /></Subtitle>
+          <Subtitle />
           {!mobile && <ScrollIcon />}
         </HeadingContainer>
     </Section>
