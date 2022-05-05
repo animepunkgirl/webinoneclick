@@ -16,16 +16,14 @@ interface Props {
   item: PortfolioItem
 }
 
-const Item: FC<Props> = ({ item }) => {
-
-  const {
-    url,
-    madeWith,
-    description,
-    features,
-    image,
-    title
-  } = item
+const Item: FC<Props> = ({ item:{
+  url,
+  madeWith,
+  description,
+  features,
+  image,
+  title
+}}) => {
 
   return (
     <>
