@@ -1,4 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
+import { flushSync } from "react-dom";
 import {useRecoilState, useRecoilValue} from "recoil";
 import { ContentWrapper } from "../Portfolio.styles";
 import {currentItemAtom, sidebarOpenAtom} from "@store/Portfolio";
@@ -18,21 +19,24 @@ const Content: FC = () => {
   const sidebarOpen = useRecoilValue(sidebarOpenAtom)
   const [itemId, setItemId] = useRecoilState(currentItemAtom)
   const [portfolioItem, setPortfolioItem] = useState<PortfolioItem | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const [isLoading, loader] = useLoader()
-
+  const loader = useLoader()
 
   useEffect(() => {
     if(typeof itemId !== "number")
       return;
 
-    loader.start();
+    flushSync(() => {
+      loader.start();
+      setIsLoading(true);
+    });
 
     (async () => {
       const item = await fetchItemInfo(itemId)
       setPortfolioItem(item)
     })()
-
+    setIsLoading(false);
     loader.finish();
 
     return () => {
@@ -42,6 +46,9 @@ const Content: FC = () => {
     //eslint-disable-next-line
   }, [itemId, setItemId])
 
+  useEffect(() => {
+    console.log(isLoading)
+  }, [isLoading])
 
   return (
     <ContentWrapper sidebarOpen={sidebarOpen} style={{ opacity: isLoading ? 0.2 : 1 }}>
