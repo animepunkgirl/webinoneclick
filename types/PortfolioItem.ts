@@ -7,6 +7,7 @@ export default interface PortfolioItem {
   title: string,
   url: string,
   description: string,
-  features: string[],
+  features?: string[],
+  remarkable?: string[],
   madeWith: string,
 }

@@ -1,9 +1,11 @@
 import PortfolioItem from "@Types/PortfolioItem";
 import React from "react";
+
 import FeelzImage from "@public/portfolio/feelz.png";
 import ECommerceImage from "@public/portfolio/pets-ecommerce.png";
 import PetSliderImage from "@public/portfolio/pet-slider.png";
 import HomeImage from "@public/portfolio/home.jpg";
+import SmartAnnieImage from "@public/portfolio/smartannie.jpg";
 
 export const portfolioItems: PortfolioItem[] = [
   {
@@ -60,5 +62,21 @@ export const portfolioItems: PortfolioItem[] = [
       "Using Swiper for full page slider at PC"
     ],
     madeWith: "React / Next.js, Swiper, Styled Components, Recoil"
+  },
+  {
+    id: 4,
+    image: SmartAnnieImage,
+    url: "https://smartannie.com",
+    isPetProject: false,
+    title: "SmartAnnie",
+    description: "I was developing the UI on React and RESTful API on Node.js/Express.\n" +
+      "I worked on supporting and rewriting legacy code, scaling functionality and layout of the new design, discussed and implemented various improvements to optimize code and user experience.",
+    remarkable: [
+      "Uploading images using AWS S3 as storage",
+      "Working with animations (including animations of the appearance/disappearance of components, such as modal windows)",
+      "Navigation on the sidebar using the hash router",
+      "Functionality of user notifications via SMS and Email after a certain time (for example, reminder of an upcoming meeting for the user)"
+    ],
+    madeWith: "React, Express / Node.js, Styled Components, MongoDB"
   }
 ]

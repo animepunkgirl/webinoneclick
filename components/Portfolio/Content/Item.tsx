@@ -21,6 +21,7 @@ const Item: FC<Props> = ({ item:{
   madeWith,
   description,
   features,
+  remarkable,
   image,
   title
 }}) => {
@@ -35,16 +36,32 @@ const Item: FC<Props> = ({ item:{
           <Text><Markdown options={options}>{description}</Markdown></Text>
         </TextWithIcon>
 
-        <TextWithIcon>
-          <MdOutlineFeaturedPlayList />
-          <Text>Features:</Text>
-        </TextWithIcon>
-
-        <Features>
-          {features.map((feature) =>
-            <Text key={feature}><Markdown options={options}>{feature}</Markdown></Text>
-          )}
-        </Features>
+        {features && (
+          <>
+            <TextWithIcon>
+              <MdOutlineFeaturedPlayList />
+              <Text>Features:</Text>
+            </TextWithIcon>
+            <Features>
+              {features.map((feature) =>
+                <Text key={feature}><Markdown options={options}>{feature}</Markdown></Text>
+              )}
+            </Features>
+          </>
+        )}
+        {remarkable && (
+          <>
+            <TextWithIcon>
+              <MdOutlineFeaturedPlayList />
+              <Text>Remarkable work:</Text>
+            </TextWithIcon>
+            <Features>
+              {remarkable.map((feature) =>
+                <Text key={feature}><Markdown options={options}>{feature}</Markdown></Text>
+              )}
+            </Features>
+          </>
+        )}
 
         <TextWithIcon>
           <MdCode />

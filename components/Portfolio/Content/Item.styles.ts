@@ -18,7 +18,8 @@ export const DescriptionWrapper = styled.div`
 
 export const TextWithIcon = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  
   gap: 0.25rem;
   & > *:first-child {
     

@@ -7,7 +7,7 @@ interface AsideProps {
 export const Aside = styled.aside<AsideProps>`
   height: 100vh;
   position: fixed;
-  z-index: 100;
+  z-index: 99;
   top: 0;
   padding-top: 5.25rem;
   left: 0;
