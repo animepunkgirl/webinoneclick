@@ -1,6 +1,6 @@
 import PortfolioItem from "@Types/PortfolioItem";
 import React from "react";
-import FeelzImage from "/portfolio/feelz.png";
+import FeelzImage from "portfolio/feelz.png";
 import ECommerceImage from "/portfolio/pets-ecommerce.png";
 import PetSliderImage from "/portfolio/pet-slider.png";
 import HomeImage from "/portfolio/home.jpg";
