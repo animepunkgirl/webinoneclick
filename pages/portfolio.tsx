@@ -1,4 +1,4 @@
-import {GetServerSideProps, NextPage} from "next";
+import { GetStaticProps, NextPage } from "next";
 import Portfolio from "@Portfolio/Portfolio";
 import {ThemeProvider} from "styled-components";
 import {homeTheme} from "@themes/Home.theme";
@@ -32,7 +32,7 @@ const PortfolioPage: NextPage<Props> = ({ items }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const response = await axios.get(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/portfolio`)
 
   if(!response.data)
