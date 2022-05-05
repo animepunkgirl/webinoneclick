@@ -1,5 +1,4 @@
 import React, {FC, useEffect, useState} from 'react';
-import { flushSync } from "react-dom";
 import {useRecoilState, useRecoilValue} from "recoil";
 import { ContentWrapper } from "../Portfolio.styles";
 import {currentItemAtom, sidebarOpenAtom} from "@store/Portfolio";
@@ -27,22 +26,20 @@ const Content: FC = () => {
     if(typeof itemId !== "number")
       return;
 
-    flushSync(() => {
+    (async () => {
       loader.start();
       setIsLoading(true);
-    });
 
-    (async () => {
       const item = await fetchItemInfo(itemId)
       setPortfolioItem(item)
+
+      setIsLoading(false);
+      loader.finish();
     })()
-    setIsLoading(false);
-    loader.finish();
 
     return () => {
       setItemId(null)
     }
-
     //eslint-disable-next-line
   }, [itemId, setItemId])
 
