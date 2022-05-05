@@ -67,13 +67,10 @@ const Subtitle = () => {
 
   }, [animeState, text, currentWord])
 
-  useEffect(() => {
-    console.log(animeState, currentWord)
-  }, [animeState, currentWord])
-
   return (
     <Typing
       isCursorFlickering={animeState !== "typing"}
+      hideCursor={animeState === "end"}
     >
       <Text type="h2" lineHeight={1} adaptiveFont={[22, 15]}>
         <span className="constant">{text[0]}</span>

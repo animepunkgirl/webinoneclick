@@ -2,6 +2,7 @@ import styled, {css} from "styled-components";
 
 interface Props {
   isCursorFlickering: boolean,
+  hideCursor: boolean
 }
 
 export const Typing = styled.div<Props>`
@@ -15,6 +16,9 @@ export const Typing = styled.div<Props>`
     left: -0.25em;
     ${({isCursorFlickering}) => isCursorFlickering && css`
       animation: flickering 1s linear infinite;
+    `}
+    ${({hideCursor}) => hideCursor && css`
+      opacity: 0;
     `}
   }
 

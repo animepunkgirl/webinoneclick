@@ -1,15 +1,10 @@
 import React, {FC} from 'react';
 import { HeadingContainer } from "./Heading.styles";
 import { Divider, Section, Text } from "@Home/UI";
-import ScrollIcon from "./ScrollIcon";
 import useMenu from "@hooks/useMenu";
 import Subtitle from "@Home/Heading/Subtitle/Subtitle";
 
-interface Props {
-  mobile?: boolean
-}
-
-const Heading: FC<Props> = ({mobile = false}) => {
+const Heading: FC = () => {
   const { addSection } = useMenu()
 
   return (
@@ -29,7 +24,6 @@ const Heading: FC<Props> = ({mobile = false}) => {
           </Text>
           <Divider>Heading</Divider>
           <Subtitle />
-          {!mobile && <ScrollIcon />}
         </HeadingContainer>
     </Section>
   );
