@@ -9,7 +9,7 @@ import Item from "@Portfolio/Content/Item";
 
 import useLoader from "@hooks/useLoader";
 
-const fetchItemInfo = async (id: number) => {
+const fetchItemInfo = async (id: number): Promise<PortfolioItem> => {
   const response = await axios.get<PortfolioItem>(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/portfolio/${id}`)
   return response.data
 }
