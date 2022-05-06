@@ -33,13 +33,14 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 3,
     image: "/portfolio/home.jpg",
-    url: "/#",
+    url: "https://github.com/animepunkgirl/webinoneclick",
     isPetProject: true,
     title: "WebInOne.Click",
-    description: "Actually my portfolio website where you are right now",
+    description: "This is my portfolio website, where you are now",
     features: [
       "Responsive design",
-      "Using Swiper for full page slider at PC"
+      "Using Swiper for full page slider at Tablet / PC",
+      "Using custom hooks for media-queries and menu scrolling"
     ],
     madeWith: "React / Next.js, Swiper, Styled Components, Recoil"
   },
@@ -50,7 +51,7 @@ export const portfolioItems: PortfolioItem[] = [
     isPetProject: false,
     title: "SmartAnnie",
     description: "I was developing the UI on React and RESTful API on Node.js/Express.\n" +
-      "I worked on supporting and rewriting legacy code, scaling functionality and layout of the new design, discussed and implemented various improvements to optimize code and user experience.",
+      "I worked on supporting and rewriting legacy code, scaling functionality and layout of the new design, discussed and implemented various improvements to optimize code and user experience",
     remarkable: [
       "Uploading images using AWS S3 as storage",
       "Working with animations (including animations of the appearance/disappearance of components, such as modal windows)",
