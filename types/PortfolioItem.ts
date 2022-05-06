@@ -1,8 +1,7 @@
-import {StaticImageData} from "next/image";
 
 export default interface PortfolioItem {
   id: number,
-  image: StaticImageData,
+  image: string,
   isPetProject: boolean,
   title: string,
   url: string,

@@ -1,15 +1,10 @@
 import PortfolioItem from "@Types/PortfolioItem";
 import React from "react";
 
-import FeelzImage from "./feelz.png";
-import PetSliderImage from "./pet-slider.png";
-import HomeImage from "./home.jpg";
-import SmartAnnieImage from "./smartannie.jpg";
-
 export const portfolioItems: PortfolioItem[] = [
   {
     id: 0,
-    image: FeelzImage,
+    image: "/portfolio/feelz.jpg",
     isPetProject: false,
     title: "FeelzApp",
     url: "https://thefeelzapp.com",
@@ -24,7 +19,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 2,
-    image: PetSliderImage,
+    image: "/portfolio/pet-slider.jpg",
     isPetProject: true,
     title: "Fullscreen Slider",
     url: "/pet-slider",
@@ -37,7 +32,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 3,
-    image: HomeImage,
+    image: "/portfolio/home.jpg",
     url: "/#",
     isPetProject: true,
     title: "WebInOne.Click",
@@ -50,7 +45,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 4,
-    image: SmartAnnieImage,
+    image: "/portfolio/smartannie.jpg",
     url: "https://smartannie.com",
     isPetProject: false,
     title: "SmartAnnie",
