@@ -3,7 +3,7 @@ import React from "react";
 
 import FeelzImage from "./feelz.png";
 import PetSliderImage from "./pet-slider.png";
-import HomeImage from "./portfolio/home.jpg";
+import HomeImage from "./home.jpg";
 import SmartAnnieImage from "./smartannie.jpg";
 
 export const portfolioItems: PortfolioItem[] = [
