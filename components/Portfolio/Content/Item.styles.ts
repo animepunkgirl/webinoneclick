@@ -43,6 +43,9 @@ export const ImageLinkWrapper = styled.a`
   overflow: hidden;
   cursor: pointer;
   user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   &::before,
   &::after {
@@ -76,6 +79,16 @@ export const ImageLinkWrapper = styled.a`
     
     &::after {
       opacity: 1;
+    }
+  }
+  
+  & .loader {
+    animation: loading 750ms ease-in-out infinite;
+  }
+  
+  @keyframes loading {
+    to {
+      transform: rotate(360deg);
     }
   }
 `
