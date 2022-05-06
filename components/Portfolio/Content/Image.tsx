@@ -15,6 +15,7 @@ const Image: FC<Props> = ({url, title, image}) => {
       <NextImage
         src={image}
         layout="fill"
+        loading="eager"
         alt={`Screenshot of ${title} project`}
         placeholder="blur"
       />
