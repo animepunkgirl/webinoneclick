@@ -33,7 +33,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 3,
     image: "/portfolio/home.jpg",
-    url: "https://github.com/animepunkgirl/webinoneclick",
+    url: process.env.NEXT_PUBLIC_GITHUB_LINK!,
     isPetProject: true,
     title: "WebInOne.Click",
     description: "This is my portfolio website, where you are now",
