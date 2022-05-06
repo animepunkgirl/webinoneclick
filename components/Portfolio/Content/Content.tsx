@@ -43,10 +43,6 @@ const Content: FC = () => {
     //eslint-disable-next-line
   }, [itemId, setItemId])
 
-  useEffect(() => {
-    console.log(isLoading)
-  }, [isLoading])
-
   return (
     <ContentWrapper sidebarOpen={sidebarOpen} style={{ opacity: isLoading ? 0.2 : 1 }}>
       {!portfolioItem ? <FileUnselected /> : <Item item={portfolioItem} />}

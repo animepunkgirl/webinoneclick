@@ -9,6 +9,7 @@ import PortfolioItem from "@Types/PortfolioItem";
 
 const options = {
   overrides: TextHelpers,
+  wrapper: React.HTMLSpanElement
 }
 
 

@@ -16,8 +16,6 @@ const PetSlider = () => {
   useEffect(() => {
     setIsTablet(isTabletMatches)
     setIsDesktop(isTabletMatches)
-
-    console.log(isTabletMatches, isDesktopMatches)
   }, [isTabletMatches, isDesktopMatches, setIsTablet, setIsDesktop])
 
   return (

@@ -9,7 +9,10 @@ import "swiper/css/autoplay"
 import "swiper/css/keyboard"
 import dynamic from "next/dynamic";
 
+console.log('Hi, I don\'t know what you forgot in my console, but if you want to look at the project code, here is the link: https://github.com/animepunkgirl/webinoneclick')
+
 function MyApp({ Component, pageProps }: AppProps) {
+
   return (
     // @ts-ignore
     <RecoilRoot>
