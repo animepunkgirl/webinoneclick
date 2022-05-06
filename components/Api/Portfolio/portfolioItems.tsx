@@ -1,11 +1,10 @@
 import PortfolioItem from "@Types/PortfolioItem";
 import React from "react";
 
-import FeelzImage from "@public/portfolio/feelz.png";
-import ECommerceImage from "@public/portfolio/pets-ecommerce.png";
-import PetSliderImage from "@public/portfolio/pet-slider.png";
-import HomeImage from "@public/portfolio/home.jpg";
-import SmartAnnieImage from "@public/portfolio/smartannie.jpg";
+import FeelzImage from "./feelz.png";
+import PetSliderImage from "./pet-slider.png";
+import HomeImage from "./portfolio/home.jpg";
+import SmartAnnieImage from "./smartannie.jpg";
 
 export const portfolioItems: PortfolioItem[] = [
   {
@@ -22,20 +21,6 @@ export const portfolioItems: PortfolioItem[] = [
       "Implementing **\"Expression Collage\"**: uploading images, adding text entries and selecting emoji from a list of available"
     ],
     madeWith: "MongoDB, Express, React, Node.js, AWS S3"
-  },
-  {
-    id: 1,
-    image: ECommerceImage,
-    isPetProject: true,
-    title: "E-Commerce (not ready)",
-    url: "/pets-commerce",
-    description: "My pet project based on the [Hekto](https://www.figma.com/community/file/967759864749832815) design",
-    features: [
-      "Responsive design",
-      "Responsive sliders",
-      "Implementing **basket** and **wishlist**",
-    ],
-    madeWith: "React, Swiper, Styled Components"
   },
   {
     id: 2,
